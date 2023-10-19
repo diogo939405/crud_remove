@@ -8,8 +8,8 @@ const router = createBrowserRouter(
     createRoutesFromElements(
 
       <Route path="/" element={<HomeLayout/>}>
-          <Route path='Home' element={<Home/>}/>
-
+          <Route path="Home" element={<Home/>}/>
+          <Route index element={<Home/>}/>
       </Route>
     )
 )

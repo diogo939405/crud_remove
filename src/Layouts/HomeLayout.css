@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.corpo{
+    background-image: url(../imagens/Banner01_03-1.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vw;   
+}
+.cabecalho{
+    background-color: black;
+    height: 110px;
+    opacity: 50%;
+    
+}
