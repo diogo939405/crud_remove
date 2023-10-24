@@ -1,19 +1,44 @@
-body{
+body {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-.corpo{
+
+.corpo {
     background-image: url(../imagens/Banner01_03-1.jpg);
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     width: 100vw;
-    height: 100vw;   
+    height: 100vw;
 }
-.cabecalho{
+
+.cabecalho {
     background-color: black;
     height: 110px;
     opacity: 50%;
+    justify-content: space-between;
     
+
+}
+
+.menu {
+    color: white;
+    display: flex;
+    /* margin: 0px; */
+    justify-content: flex-end;
+    padding-right: 30px;
+    margin-top: -35px;
+}
+
+.menuPalavra{
+    padding-right: 30px;
+    display: flex;
+    font: normal 700 15px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;;
+}
+
+.foto{
+    margin-top: 20px;
+    padding-left: 50px;
+
 }
