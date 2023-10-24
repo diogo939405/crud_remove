@@ -10,11 +10,11 @@ export default function HomeLayout() {
         <img className='foto' src="https://rb1-condominio.com.br/extranet/wp-content/uploads/2023/08/Logo_top1-1-e1653228986853-meno.png" width="107px" height="61px" alt='cabeçalho'></img>
         </div>
         <nav className='menu'>
-          <span className='menuPalavra'> Principal</span>
-          <span className='menuPalavra'> Aniversariantes</span>
+          <span className='menuPalavra'> PRINCIPAL</span>
+          <span className='menuPalavra'> ANIVERSARIANTES</span>
           <span className='menuPalavra'> LGPD</span>
-          <span className='menuPalavra'>Controle de Acesso</span>
-          <span className='menuPalavra'> Sair</span>
+          <span className='menuPalavra'>CONTROLE DE ACESSO</span>
+          <span className='menuPalavra'> SAIR</span>
         </nav>
       </header>
       <body >
