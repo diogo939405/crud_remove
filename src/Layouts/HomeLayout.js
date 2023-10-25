@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import './HomeLayout.css'
 <link href="https://fonts.cdnfonts.com/css/ropa-sans-2" rel="stylesheet"></link>
 
+
 export default function HomeLayout() {
   return (
     <div className='corpo' >
@@ -26,7 +27,7 @@ export default function HomeLayout() {
           <p className='TextoRodape'>
             © 2022 RB1. Todos os direitos reservados. Desenvolvido por INETEP
           </p>
-          <span className='TextoRodape2'> 📞+55 (21) 2106-1255 📧rb1@rb1.com.br</span>
+          <span className='TextoRodape2'>   📞+55 (21) 2106-1255  <i className=" pi pi-envelope" ></i> rb1@rb1.com.br</span>
         </div>
       </footer>
     </div>
