@@ -27,10 +27,14 @@ export default function HomeLayout() {
           <p className='TextoRodape'>
             © 2022 RB1. Todos os direitos reservados. Desenvolvido por INETEP
           </p>
-          <span className='TextoRodape2'>   📞+55 (21) 2106-1255  <i className=" pi pi-envelope" ></i> rb1@rb1.com.br</span>
+          <div className='info'>
+          <span className='TextoRodape2'>+55 (21) 2106-1255</span>
+          <span className='TextoRodape2'><i className=" pi pi-envelope" ></i> rb1@rb1.com.br</span>
+          </div>
         </div>
       </footer>
     </div>
 
   )
 }
+// 📞

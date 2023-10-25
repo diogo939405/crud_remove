@@ -15,7 +15,8 @@
     height: 110px;
     justify-content: space-between;
 }
-body{
+
+body {
     display: grid;
     grid-template-rows: 72.2vh;
     /* min-height: 100%; */
@@ -23,14 +24,11 @@ body{
 }
 
 .menu {
-
     display: flex;
-    /* margin: 0px; */
     justify-content: flex-end;
     padding-right: 30px;
     margin-top: -35px;
-    z-index: 15;
-
+    list-style-type: none;
 }
 
 .menuPalavra {
@@ -39,8 +37,26 @@ body{
     font: normal 700 15px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
     ;
     color: #fff;
-
 }
+
+/* .menu>.menuPalavra::after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 100%;
+    top: 5px;
+    background: transparent;
+    transition: transform 0.25 linear;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.menu> .menuPalavra:hover::after{
+        transform-origin: bottom left;
+        transform: scaleX(1);
+} */
 
 .foto {
     margin-top: 20px;
@@ -49,26 +65,33 @@ body{
 }
 
 footer {
-    background:url(../imagens/fundoo.png);
-    color: #eee;;
+    background: url(../imagens/fundoo.png);
+    color: #eee;
+    ;
     padding: 0 50px 0 50px;
     height: 8vh;
     margin-top: 3vh;
 
 }
 
-.fotoFooter {    
-     float: left;
-     margin-top: 11px;
+.fotoFooter {
+    float: left;
+    margin-top: 11px;
 }
-.TextoRodape{
+
+.TextoRodape {
     float: left;
     margin-top: 16px;
-    margin-left: 10px; 
-    font-size: 1.2rem;    
+    margin-left: 10px;
+    font-size: 1.2rem;
 }
-.TextoRodape2{
+
+.TextoRodape2 {
     float: right;
     margin-top: 16px;
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
+}
+.info{
+   padding: 2px;
+   
 }
