@@ -9,6 +9,7 @@ export default function Home() {
     getdata().then((res) => setServiceData(res.data))
   },[]);
 
+  Promise.resolve(getdata()).then(rr => console.log('EUUUU',rr))
   return (
     <div>
       <Outlet />
