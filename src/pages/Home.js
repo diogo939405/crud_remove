@@ -11,8 +11,6 @@ export default function Home() {
 
   return (
     <div>
-
-
       <Outlet />
     </div>
   )
