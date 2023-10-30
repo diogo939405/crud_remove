@@ -6,12 +6,12 @@ import { Column } from 'primereact/column';
 
 export default function Home() {
 
-  const [serviceData, setServiceData] = useState([]);
+  const [serviceData, setServiceData] = useState([{'name':'diogo'}]);
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
-  useEffect(() => {
-    Getdata().then((res) => {setServiceData(res.data);console.log('efefee',res.data)})
-  }, []);
+  // useEffect(() => {
+  //   Getdata().then((data) => setServiceData(data));
+  // }, []);
 
  
   return (
