@@ -2,7 +2,6 @@ import { Route, RouterProvider,createBrowserRouter,createRoutesFromElements } fr
 import './App.css';
 import HomeLayout from './Layouts/HomeLayout'
 import Home from './pages/Home'
-import 'primeicons/primeicons.css';
 
 
 const router = createBrowserRouter(
