@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
-import { getdata } from "../service/service"
+import { Getdata } from "../service/service"
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
@@ -10,7 +10,7 @@ export default function Home() {
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
   useEffect(() => {
-    getdata().then((res) => {setServiceData(res.data);console.log('efefee',res.data)})
+    Getdata().then((res) => {setServiceData(res.data);console.log('efefee',res.data)})
   }, []);
 
  
