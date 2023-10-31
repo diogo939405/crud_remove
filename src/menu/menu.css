@@ -1,0 +1,19 @@
+@import url('https://fonts.cdnfonts.com/css/ropa-sans-2');
+
+@import url('https://fonts.cdnfonts.com/css/ropa-sans-2');
+
+.cabecalho {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 110px;
+    justify-content: space-between;
+}
+.foto {
+    margin-top: 20px;
+    padding-left: 50px;
+
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}

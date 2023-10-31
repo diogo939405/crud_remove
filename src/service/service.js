@@ -1,6 +1,7 @@
-
 import  { useState} from 'react'
-export async function Getdata() {
+
+
+export  async function Getdata() {
     const [result, setResult] = useState([]);
    
     const url = "https://blue-enchanting-macaw.cyclic.cloud/diogo";

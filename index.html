@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <style>
+        * {
+            /* background-image: url(./bannIa.png); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            max-width: 100%;
+            /* max-height: 101vh; */
+            font-family: 'ropa-sans2';
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+            margin-top: 0;
+            /* background-color: #0b121b; */
+        }
+
+        ul li {
+            display: inline-block;
+            position: relative;
+            line-height: 20px;
+            text-align: left;
+            width: 160px;
+        }
+
+        ul,
+        li,
+        ul li {
+            border-bottom: 1ps solid purple;
+        }
+
+        ul li a {
+            display: block;
+            padding: 8px 25px;
+            color: black;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            color: white;
+            background-color: orange;
+        }
+
+        ul li ul.submenu
+        {
+            min-width: 100%;
+            background-color: rgba(11,18,27,0.8);
+            color: white;
+            display:  none;
+            /* position: absolute; */
+            /* z-index: 999; */
+            /* left: 0; */
+        }
+/* 
+        ul,li,ul,li ul.topic{
+            display:none ;
+        } */
+
+        /* ul,li,ul,li:hover ul.topic{
+            display: block;
+            left: 100%;
+            top: 0%;
+            position: absolute;
+        } */
+        
+    </style>
+</head>
+<header className='cabecalho'>
+    <img className='foto'
+        src="https://rb1-condominio.com.br/extranet/wp-content/uploads/2023/08/Logo_top1-1-e1653228986853-meno.png"
+        width="107px" height="61px" alt='cabeçalho'></img>
+
+    <ul>
+        <li><a href=''>PRINCIPAL</a> </li>
+        <li><a href=''>ANIVERSARIANTES</a> </li>
+        <li><a href=''>LGPD</a></li>
+        <li><a href=''>SEGURANÇA</a></li>
+        <ul className='submenu'>
+            <li><a href=''>SEGURANÇA CIBERNETICA</a></li>
+            <ul className='tópicos'>
+                <li><a href=''>EGURANÇA CIBERNETICA 1</a></li>
+                <li><a href=''>EGURANÇA CIBERNETICA</a> </li>
+            </ul>
+            <li><a href=''>SEGURANÇA PREDIAL</a></li>
+            <ul className='tópicos'>
+                <li><a href=''>EGURANÇA CIBERNETICA 1</a></li>
+                <li><a href=''>EGURANÇA CIBERNETICA</a> </li>
+            </ul>
+        </ul>
+        <li><a href=''>CONTROLE DE ACESSO</a></li>
+        <ul className='tópicos'>
+            <li><a href=''>ADICIONAR</a></li>
+            <li><a href=''>REMOVER</a> </li>
+        </ul>
+        <ul>
+            <li><a href=''>ADICIONAR</a></li>
+            <li><a href=''>REMOVER</a></li>
+        </ul>
+        <li><a href=''>SAIR</a> </li>
+
+    </ul>
+
+</header>
+
+
+</html>
