@@ -4,3 +4,13 @@
     margin-left: 280px;
     border-radius: 100px;
 }
+
+header{
+   
+}
+
+
+
+.p-datatable .p-datatable-thead > tr > th {
+    color: #f4ae22;
+}

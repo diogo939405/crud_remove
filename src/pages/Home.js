@@ -76,8 +76,8 @@ export default function Home() {
         tableStyle={{ Width: '50rem' }}>
 
         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-        <Column field="name" header="Nome"></Column>
-        <Column field="slug" header="Email"></Column>
+        <Column  field="name" header="Nome"></Column>
+        <Column  field="slug" header="Email"></Column>
         <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column>
 
       </DataTable>
