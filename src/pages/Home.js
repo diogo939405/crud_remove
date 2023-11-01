@@ -3,10 +3,11 @@ import { Outlet } from 'react-router-dom'
 import { Getdata } from "../service/service"
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import './Home.css'
 
 export default function Home() {
 
-  const [serviceData, setServiceData] = useState([{ 'name': 'diogo' }]);
+  const [serviceData, setServiceData] = useState([{ }]);
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
 
@@ -31,20 +32,26 @@ export default function Home() {
   }, []); 
 
   return (
-    <div>
-      <DataTable value={serviceData} scrollable scrollHeight="70vh"
+    <div className='content'>
+      <DataTable value={serviceData} scrollable scrollHeight="70vh" className='tabela' 
         dataKey="id"
         selectionMode={rowClick ? null : 'checkbox'}
         selection={selectedProducts}
         onSelectionChange={(e) => setSelectedProducts(e.value)}
-        tableStyle={{ minWidth: '50rem' }}>
+        tableStyle={{ Width: '50rem' }}>
 
         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
         <Column field="name" header="Nome"></Column>
-        <Column field="slug" header="email"></Column> 
+        <Column field="slug" header="Email"></Column> 
 
       </DataTable>
       <Outlet />
     </div>
   )
 }
+
+// margin-top: -450px;
+// width: 50rem;
+// margin-left: 200px;
+// border-radius: 100px;
+// }
