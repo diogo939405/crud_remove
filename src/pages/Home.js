@@ -62,7 +62,7 @@ export default function Home() {
   }
   return (
     
-    <div className='content'>
+    <div className='content contentBDTable'>
 
       <Button label="Apagar" severity="danger" rounded onClick={deletar} className="id" style={{ display: displayButton }}  >
 
