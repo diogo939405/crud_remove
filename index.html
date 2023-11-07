@@ -1,112 +1,141 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Dropdown Menu</title>
     <style>
+
         * {
-            /* background-image: url(./bannIa.png); */
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            max-width: 100%;
-            /* max-height: 101vh; */
-            font-family: 'ropa-sans2';
-            margin: 0;
-            padding: 0;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-        ul {
-            padding: 0;
-            list-style-type: none;
-            margin-top: 0;
-            /* background-color: #0b121b; */
-        }
+.container {
+    font-size: 14px;
+    height: 100vh;
+    background: #d8d8d8;
+}
 
-        ul li {
-            display: inline-block;
-            position: relative;
-            line-height: 20px;
-            text-align: left;
-            width: 160px;
-        }
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
 
-        ul,
-        li,
-        ul li {
-            border-bottom: 1ps solid purple;
-        }
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
 
-        ul li a {
-            display: block;
-            padding: 8px 25px;
-            color: black;
-            text-decoration: none;
-        }
+/* mantem o de baixo */
 
-        ul li a:hover {
-            color: white;
-            background-color: orange;
-        }
+.nav-link, .drop-down li {
+    list-style: none;
+    
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
 
-        ul li ul.submenu
-        {
-            min-width: 100%;
-            background-color: rgba(11,18,27,0.8);
-            color: white;
-            display:  none;
-            /* position: absolute; */
-            /* z-index: 999; */
-            /* left: 0; */
-        }
-/* 
-        ul,li,ul,li ul.topic{
-            display:none ;
-        } */
+a {
+    text-decoration: none;
+    color: currentColor;
+}
 
-        /* ul,li,ul,li:hover ul.topic{
-            display: block;
-            left: 100%;
-            top: 0%;
-            position: absolute;
-        } */
-        
+.drop-down {
+   
+    position: absolute;
+    /* padding: 0.5rem 0; */
+    margin: 0.5rem -0.5rem;
+    background: antiquewhite;
+    color: black;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    font-size: 12px;
+    display: none;
+}
+
+.nav-link:hover {
+    background-color: black;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.services:hover .drop-down {
+    display: block;
+}
+
+.services a {
+    display: flex;
+    align-items: center;
+}
+
+.services .dropdown-icon {
+    font-size: 18px;
+    position: relative;
+    right: -5px;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out all;
+}
+
+.services:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.drop-down li:hover {
+    background: black;
+    color: #fff;
+    border-radius: 0.5rem;
+}
     </style>
 </head>
-<header className='cabecalho'>
-    <img className='foto'
-        src="https://rb1-condominio.com.br/extranet/wp-content/uploads/2023/08/Logo_top1-1-e1653228986853-meno.png"
-        width="107px" height="61px" alt='cabeçalho'></img>
-
-    <ul>
-        <li><a href=''>PRINCIPAL</a> </li>
-        <li><a href=''>ANIVERSARIANTES</a> </li>
-        <li><a href=''>LGPD</a></li>
-        <li><a href=''>SEGURANÇA</a></li>
-        <ul className='submenu'>
-            <li><a href=''>SEGURANÇA CIBERNETICA</a></li>
-            <ul className='tópicos'>
-                <li><a href=''>EGURANÇA CIBERNETICA 1</a></li>
-                <li><a href=''>EGURANÇA CIBERNETICA</a> </li>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link">
+                    <a href="#">Principal</a>
+                </li>
+                <li class="nav-link services">
+                    <a href="#">SEGURANÇA
+                        <span class="material-icons dropdown-icon">
+                            arrow_drop_down
+                        </span>
+                    </a>
+                    <ul class="drop-down">
+                        <li>SEGURANÇA CIBERNETICA</li>
+                        <li>SEGURANÇA PREDIAL</li>
+                    </ul>
+                </li>
+                <li class="nav-link services">
+                    <a href="#">CONTROLE DE ACESSO
+                        <span class="material-icons dropdown-icon">
+                            arrow_drop_down
+                        </span>
+                    </a>
+                    <ul class="drop-down">
+                        <li>ADICIONAR</li>
+                        <li>REMOVER</li>
+                       
+                    </ul>
+                </li>
+                <li class="nav-link">
+                    <a href="#">LGPD</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">ANIVERSARIANTES</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">SAIR</a>
+                </li>
+                
             </ul>
-            <li><a href=''>SEGURANÇA PREDIAL</a></li>
-            <ul className='tópicos'>
-                <li><a href=''>EGURANÇA CIBERNETICA 1</a></li>
-                <li><a href=''>EGURANÇA CIBERNETICA</a> </li>
-            </ul>
-        </ul>
-        <li><a href=''>CONTROLE DE ACESSO</a></li>
-        <ul className='tópicos'>
-            <li><a href=''>ADICIONAR</a></li>
-            <li><a href=''>REMOVER</a> </li>
-        </ul>
-        <ul>
-            <li><a href=''>ADICIONAR</a></li>
-            <li><a href=''>REMOVER</a></li>
-        </ul>
-        <li><a href=''>SAIR</a> </li>
-
-    </ul>
-
-</header>
-
-
+        </nav>
+    </div>
+</body>
 </html>
