@@ -10,23 +10,53 @@ export default function HomeLayout() {
     <div className='corpo' >
       <header className='cabecalho'>
         <img className='foto' src="https://rb1-condominio.com.br/extranet/wp-content/uploads/2023/08/Logo_top1-1-e1653228986853-meno.png" width="107px" height="61px" alt='cabeçalho'></img>
-        <nav className='nav'>
-          <ul className='menu'>
-            <li className='menuPalavra'> PRINCIPAL fiz a mudança aqui</li>
-            <li className='menuPalavra'> ANIVERSARIANTES</li>
-            <li className='menuPalavra'> LGPD</li>
-            <div id="MenuLGPD">
-              <li className='menuPalavra'>CONTROLE DE ACESSO
-                <ul id='submenu'>
-                  <a>Adicionar</a>
-                  <a>Remover</a>
-                </ul>
-              </li>
-            </div>
-            <li className='menuPalavra'> SAIR</li>
-          </ul>
+        <div class="container">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link">
+                    <a href="#">PRINCIPAL</a>
+                </li>
+                <span class="nav-link-detail">|</span>
+                <li class="nav-link services">
+                    <a href="#">SEGURANÇA
+                        <span class="material-icons dropdown-icon">
+                            arrow_drop_down
+                        </span>
+                    </a>
+                    <ul class="drop-down">
+                        <li>SEGURANÇA CIBERNETICA</li>
+                        <li>SEGURANÇA PREDIAL</li>
+                    </ul>
+                </li>
+                <span class="nav-link-detail">|</span>
+                <li class="nav-link services">
+                    <a href="#">CONTROLE DE ACESSO
+                        <span class="material-icons dropdown-icon">
+                            arrow_drop_down
+                        </span>
+                    </a>
+                    <ul class="drop-down">
+                        <li>ADICIONAR</li>
+                        <li>REMOVER</li>
 
+                    </ul>
+                </li>
+                <span class="nav-link-detail">|</span>
+                <li class="nav-link">
+                    <a href="#">LGPD</a>
+                </li>
+                <span class="nav-link-detail">|</span>
+                <li class="nav-link">
+                    <a href="#">ANIVERSARIANTES</a>
+                </li>
+                <span class="nav-link-detail">|</span>
+                <li class="nav-link">
+                    <a href="#">SAIR</a>
+                </li>
+
+            </ul>
         </nav>
+    </div>
       </header>
       <body>
         <p></p>

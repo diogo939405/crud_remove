@@ -23,73 +23,23 @@
 body {
     display: grid;
     grid-template-rows: 72.2vh;
-    /* min-height: 100%; */
+ 
     margin: none;
 }
 
-
-
-.nav ul{
-    list-style: none;
-}
-.nav li{
-    float: left;
-    position: relative;
-    width: auto;
-}
-.nav a{
-    background-color: purple;
-    color: white;
-    display: block;
-    padding: 15px 55px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.25 ease;
+.container {
+    font-size: 14px;
+    height: 100vh;
+    /* background: #d8d8d8; */
 }
 
-.nav li:hover a{
-    background: #3434;
-    padding: 9px 10px 9px 10px;
-}
-
-#submenu{
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    visibility: hidden;
-    z-index: 1;
-}
-
-li:hover ul#submenu{
-    opacity: 1;
-    top: 80px;
-    visibility: visible;
-    /* background-color: aqua; fundo do submenu */
-}
-
-#submenu li{
-    float: none;
-    width: 100%;
-    left: 0;
-    opacity: 0;
-}
-
-.menu {
+.navbar {
     display: flex;
     justify-content: flex-end;
-    padding-right: 30px;
-    margin-top: -35px;
-    list-style-type: none;
-    position: 'relative';
+    position: relative;
 }
 
-.menuPalavra {
-    padding-right: 30px;
-    display: flex;
-    font: normal 700 15px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
-    ;
-    color: #fff;
-}
+
 
 
 .foto {
