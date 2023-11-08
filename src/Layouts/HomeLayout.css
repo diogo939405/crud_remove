@@ -61,13 +61,15 @@ a {
     font: normal 700 15px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
     ;
     color: #fff;
+    position: relative;
+   
 }
 
 .drop-down {
 
     position: absolute;
     /* padding: 0.5rem 0; */
-    margin: 0.5rem 0rem 0rem -1rem;
+    margin: 0.9rem 0rem 0rem -1rem;
     background-color: #e8e8e8;
     color: #333333;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -77,6 +79,34 @@ a {
     min-width: 220px;
     font: normal 700 12px / 16px "Roboto", Helvetica, Arial, Verdana, sans-serif;
     ;
+}
+
+
+
+/* .nav-link  :hover {
+    border-bottom: solid 2px #fff;
+    bottom: -6px;
+    transition: linear width 2s
+} */
+
+/* a:hover{
+    color: #b31c1f; 
+
+} */
+
+a::after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: white;
+    left: 0;
+    bottom: -8px;
+    position: absolute;
+    opacity: 0;
+}
+a:hover::after{
+    opacity: 1;
+    
 }
 
 .services:hover .drop-down {

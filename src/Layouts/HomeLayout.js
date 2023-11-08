@@ -18,8 +18,7 @@ export default function HomeLayout() {
                 </li>
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link services">
-                    <a href="#">SEGURANÇA
-                     
+                    <a href="#">SEGURANÇA +
                     </a>
                     <ul class="drop-down">
                         <li>CARTILHAS</li>
@@ -28,7 +27,7 @@ export default function HomeLayout() {
                 </li>
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link services">
-                    <a href="#">CONTROLE DE ACESSO
+                    <a href="#">CONTROLE DE ACESSO +
                     </a>
                     <ul class="drop-down">
                         <li>ADICIONAR</li>
