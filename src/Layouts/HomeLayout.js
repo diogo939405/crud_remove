@@ -22,8 +22,8 @@ export default function HomeLayout() {
                      
                     </a>
                     <ul class="drop-down">
-                        <li>SEGURANÇA CIBERNETICA</li>
-                        <li>SEGURANÇA PREDIAL</li>
+                        <li>CARTILHAS</li>
+                        <li>MANUAIS</li>
                     </ul>
                 </li>
                 <span class="nav-link-detail">|</span>
