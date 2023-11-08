@@ -19,9 +19,7 @@ export default function HomeLayout() {
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link services">
                     <a href="#">SEGURANÇA
-                        <span class="material-icons dropdown-icon">
-                            arrow_drop_down
-                        </span>
+                     
                     </a>
                     <ul class="drop-down">
                         <li>SEGURANÇA CIBERNETICA</li>
@@ -31,9 +29,6 @@ export default function HomeLayout() {
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link services">
                     <a href="#">CONTROLE DE ACESSO
-                        <span class="material-icons dropdown-icon">
-                            arrow_drop_down
-                        </span>
                     </a>
                     <ul class="drop-down">
                         <li>ADICIONAR</li>
