@@ -14,38 +14,51 @@ export default function HomeLayout() {
         <nav class="navbar">
             <ul class="nav-links">
                 <li class="nav-link">
+                <div className='drop-down-catch'>
                     <a href="#">PRINCIPAL</a>
+                    </div>
                 </li>
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link services">
+                  <div className='drop-down-catch'>
                     <a href="#">SEGURANÇA +
                     </a>
                     <ul class="drop-down">
                         <li>CARTILHAS</li>
                         <li>MANUAIS</li>
                     </ul>
+                    </div>
                 </li>
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link services">
+                  <div className='drop-down-catch'>
                     <a href="#">CONTROLE DE ACESSO +
                     </a>
                     <ul class="drop-down">
                         <li>ADICIONAR</li>
                         <li>REMOVER</li>
-
+                       
                     </ul>
+                    </div> 
                 </li>
+                
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link">
+                <div className='drop-down-catch'>
                     <a href="#">LGPD</a>
+                    </div>
                 </li>
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link">
+                <div className='drop-down-catch'>
                     <a href="#">ANIVERSARIANTES</a>
+                    </div>
                 </li>
                 <span class="nav-link-detail">|</span>
                 <li class="nav-link">
+                <div className='drop-down-catch'>
                     <a href="#">SAIR</a>
+                    </div>
                 </li>
 
             </ul>
@@ -63,7 +76,7 @@ export default function HomeLayout() {
             © 2022 RB1. Todos os direitos reservados. Desenvolvido por INETEP
           </p>
           <div className='info'>
-            <span className='TextoRodape2'>+55 (21) 2106-1255</span>
+            <span className='TextoRodape2'> +55 (21) 2106-1255</span>
             <span className='TextoRodape2'><i className=" pi pi-envelope" ></i> rb1@rb1.com.br</span>
           </div>
         </div>
