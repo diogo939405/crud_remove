@@ -22,7 +22,7 @@
 
 body {
     display: grid;
-    grid-template-rows: 72.2vh;
+    grid-template-rows: 75.2vh;
  
     margin: none;
 }
@@ -75,7 +75,7 @@ a {
     position: absolute;
     /* padding: 0.5rem 0; */
     margin:  2.45rem 0rem 0rem -1rem;
-    background-color: #e8e8e8;
+    background-color: #333333;
     color: #333333;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     /*border-radius: 0.5rem;*/
@@ -151,9 +151,9 @@ a:hover::after{
     color: #8a8a8a;
 }
 
-.foto {
-    margin-top: 20px;
-    padding-left: 50px;
+img.foto {
+    /* margin-top: 20px; */
+    padding-left: 5px;
 
 }
 

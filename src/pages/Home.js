@@ -27,16 +27,16 @@ export default function Home() {
         console.error('Error fetching data:', error);
       });
   }, []);
-  const botoes = (rowdata) => {
-    return <Button onClick={() => deletarUnicoUsuario(rowdata)} icon="pi pi-times" severity="danger" aria-label="Cancel"></Button>
+  // const botoes = (rowdata) => {
+  //   return <Button onClick={() => deletarUnicoUsuario(rowdata)} icon="pi pi-times" severity="danger" aria-label="Cancel"></Button>
   
-  }
-  const deletarUnicoUsuario = (data) => {
-    const confirma = window.confirm("Deseja apagar?");
-    if (confirma) {
-      deleteUser(data)
-    }
-  }
+  // }
+  // const deletarUnicoUsuario = (data) => {
+  //   const confirma = window.confirm("Deseja apagar?");
+  //   if (confirma) {
+  //     deleteUser(data)
+  //   }
+  // }
 
   const deleteUser = (data) => {
     axios.delete(`http://localhost:4000/usuarios/${data.id}`)
@@ -45,7 +45,7 @@ export default function Home() {
       })
   }
 
-  const deletar = (ee) => {
+  const deletarVariosUsuarios = (ee) => {
     const confirma = window.confirm("Deseja apagar?");
     if (confirma) {
       selectedProducts.forEach(element => {
@@ -64,7 +64,7 @@ export default function Home() {
     
     <div className='content contentBDTable'>
 
-      <Button label="Apagar" severity="danger" rounded onClick={deletar} className="id" style={{ display: displayButton }}  >
+      <Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}  >
 
       </Button>
 
@@ -73,12 +73,12 @@ export default function Home() {
         selectionMode={rowClick ? null : 'checkbox'}
         selection={selectedProducts}
         onSelectionChange={Seleciona}
-        tableStyle={{ Width: '50rem' }}>
+        tableStyle={{ Width: '50rem',height:'73vh' }}>
 
         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
         <Column  field="name" header="Nome"></Column>
         <Column  field="slug" header="Email"></Column>
-        <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column>
+        {/* <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column> */}
 
       </DataTable>
       <Outlet />

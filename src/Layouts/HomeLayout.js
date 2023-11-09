@@ -11,59 +11,66 @@ export default function HomeLayout() {
       <header className='cabecalho'>
         <img className='foto' src="https://rb1-condominio.com.br/extranet/wp-content/uploads/2023/08/Logo_top1-1-e1653228986853-meno.png" width="107px" height="61px" alt='cabeçalho'></img>
         <div class="container">
-        <nav class="navbar">
+          <nav class="navbar">
             <ul class="nav-links">
-                <li class="nav-link">
+              <li class="nav-link">
                 <div className='drop-down-catch'>
-                    <a href="#">PRINCIPAL</a>
-                    </div>
-                </li>
-                <span class="nav-link-detail">|</span>
-                <li class="nav-link services">
-                  <div className='drop-down-catch'>
-                    <a href="#">SEGURANÇA +
-                    </a>
-                    <ul class="drop-down">
-                        <li>CARTILHAS</li>
-                        <li>MANUAIS</li>
-                    </ul>
-                    </div>
-                </li>
-                <span class="nav-link-detail">|</span>
-                <li class="nav-link services">
-                  <div className='drop-down-catch'>
-                    <a href="#">CONTROLE DE ACESSO +
-                    </a>
-                    <ul class="drop-down">
-                        <li>ADICIONAR</li>
-                        <li>REMOVER</li>
-                       
-                    </ul>
-                    </div> 
-                </li>
-                
-                <span class="nav-link-detail">|</span>
-                <li class="nav-link">
+                  <a href="https://rb1-condominio.com.br/extranet/">PRINCIPAL</a>
+                </div>
+              </li>
+              <span class="nav-link-detail">|</span>
+
+              <li class="nav-link">
                 <div className='drop-down-catch'>
-                    <a href="#">LGPD</a>
-                    </div>
-                </li>
-                <span class="nav-link-detail">|</span>
-                <li class="nav-link">
+                  <a href="https://rb1-condominio.com.br/extranet/aniversariantes/">ANIVERSARIANTES</a>
+                </div>
+              </li>
+              <span class="nav-link-detail">|</span>
+
+              <li class="nav-link">
                 <div className='drop-down-catch'>
-                    <a href="#">ANIVERSARIANTES</a>
-                    </div>
-                </li>
-                <span class="nav-link-detail">|</span>
-                <li class="nav-link">
+                  <a href="https://rb1-condominio.com.br/extranet/lgpd/">LGPD</a>
+                </div>
+              </li>
+              <span class="nav-link-detail">|</span>
+
+
+              <li class="nav-link services">
                 <div className='drop-down-catch'>
-                    <a href="#">SAIR</a>
-                    </div>
-                </li>
+                  <a href="https://rb1-condominio.com.br/extranet/seguranca/">SEGURANÇA +
+                  </a>
+                  <ul class="drop-down">
+                    <a href='https://rb1-condominio.com.br/extranet/seguranca-celulares-e-tablets/'><li>CARTILHAS</li></a>
+                    <a href='https://rb1-condominio.com.br/extranet/seguranca/'><li>MANUAIS</li></a>
+                  </ul>
+                </div>
+              </li>
+              <span class="nav-link-detail">|</span>
+              <li class="nav-link services">
+                <div className='drop-down-catch'>
+                  <a href="https://rb1-condominio.com.br/extranet/cadastro/">CONTROLE DE ACESSO +
+                  </a>
+                  <ul class="drop-down">
+                   <a href='https://rb1-condominio.com.br/extranet/cadastro/'><li>ADICIONAR</li></a> 
+                   <a href='#'><li>REMOVER</li> </a> 
+
+                  </ul>
+                </div>
+              </li>
+
+              <span class="nav-link-detail">|</span>
+             
+              
+              
+              <li class="nav-link">
+                <div className='drop-down-catch'>
+                  <a href="#">SAIR</a>
+                </div>
+              </li>
 
             </ul>
-        </nav>
-    </div>
+          </nav>
+        </div>
       </header>
       <body>
         <p></p>
