@@ -13,10 +13,9 @@ export default function Home() {
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
 
-
+  const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
   useEffect(() => {
-    const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/diogo';
-    fetch(apiUrl)
+    fetch(`${apiUrl}/getUsers`)
       .then((response) => response.json())
       .then((data) => {
 
@@ -39,7 +38,7 @@ export default function Home() {
   // }
 
   const deleteUser = (data) => {
-    axios.delete(`http://localhost:4000/usuarios/${data.id}`)
+    axios.delete(`${apiUrl}/delete/${data.id}`)
       .then(res => {
         window.location.reload()
       })
