@@ -40,8 +40,8 @@ export default function HomeLayout() {
                   <a href="https://rb1-condominio.com.br/extranet/seguranca/">SEGURANÇA +
                   </a>
                   <ul class="drop-down">
-                    <a href='https://rb1-condominio.com.br/extranet/seguranca-celulares-e-tablets/'><li>CARTILHAS</li></a>
-                    <a href='https://rb1-condominio.com.br/extranet/seguranca/'><li>MANUAIS</li></a>
+                    <a id='submenu' href='https://rb1-condominio.com.br/extranet/seguranca-celulares-e-tablets/'><li>CARTILHAS</li></a>
+                    <a id='submenu' href='https://rb1-condominio.com.br/extranet/seguranca/'><li>MANUAIS</li></a>
                   </ul>
                 </div>
               </li>
@@ -51,8 +51,8 @@ export default function HomeLayout() {
                   <a href="https://rb1-condominio.com.br/extranet/cadastro/">CONTROLE DE ACESSO +
                   </a>
                   <ul class="drop-down">
-                   <a href='https://rb1-condominio.com.br/extranet/cadastro/'><li>ADICIONAR</li></a> 
-                   <a href='#'><li>REMOVER</li> </a> 
+                   <a id='submenu' href='https://rb1-condominio.com.br/extranet/cadastro/'><li>ADICIONAR</li></a> 
+                   <a id='submenu' href='#'><li>REMOVER</li> </a> 
 
                   </ul>
                 </div>
