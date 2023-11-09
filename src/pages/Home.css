@@ -69,6 +69,7 @@ table.p-datatable-table tr:nth-child(even) {
 .botão-remover:hover{
   background: rgb(226, 224, 224) ;
   color: #976363;
+  transition: linear 0.1s;
   
 }
 
