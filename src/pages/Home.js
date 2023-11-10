@@ -13,10 +13,9 @@ export default function Home() {
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
 
-
+  const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
   useEffect(() => {
-    const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/diogo';
-    fetch(apiUrl)
+    fetch(`${apiUrl}/getUsers`)
       .then((response) => response.json())
       .then((data) => {
 
@@ -39,7 +38,7 @@ export default function Home() {
   // }
 
   const deleteUser = (data) => {
-    axios.delete(`http://localhost:4000/usuarios/${data.id}`)
+    axios.delete(`${apiUrl}/delete/${data.id}`)
       .then(res => {
         window.location.reload()
       })
@@ -59,16 +58,23 @@ export default function Home() {
   const Seleciona = (e) => {
     setSelectedProducts(e.value)
     setDisplayButton(e.value.length === 0 ? 'none' : 'block')
+   
+  }
+
+  const cabecalho = () => {
+      return (
+       <><><label></label>Nome</label><Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
+       <i className=" pi pi-trash"></i> </Button></></>
+      )
   }
   return (
     
     <div className='content contentBDTable'>
 
-      <Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}  >
+      {/* <Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
+      </Button> */}
 
-      </Button>
-
-      <DataTable value={serviceData} scrollable scrollHeight="70vh" className='tabela'
+      <DataTable  value={serviceData} scrollable scrollHeight="70vh" className='tabela'
         dataKey="id"
         selectionMode={rowClick ? null : 'checkbox'}
         selection={selectedProducts}
@@ -76,7 +82,7 @@ export default function Home() {
         tableStyle={{ Width: '50rem',height:'73vh' }}>
 
         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-        <Column  field="name" header="Nome"></Column>
+        <Column  field="name" header={cabecalho}></Column>
         <Column  field="slug" header="Email"></Column>
         {/* <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column> */}
 
