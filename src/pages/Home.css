@@ -31,7 +31,7 @@
 .p-datatable .p-datatable-thead > tr > th {
   color: #f7f3f3;
   background-color: #976363;
-  padding: 10px 3px;
+  padding: 18px 3px;
   border: none;
 }
 
@@ -60,9 +60,10 @@ table.p-datatable-table tr:nth-child(even) {
   bottom: 0.8rem;
   z-index: 1;
   background: #976363;
-  box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
+  border: none;
+  /* box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
   
-  border: 1px solid rgba(0,0,0,0.45);;
+  border: 1px solid rgba(0,0,0,0.45);; */
   font: normal 600 14px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
     ;
     color: #fff;

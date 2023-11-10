@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
   // const botoes = (rowdata) => {
   //   return <Button onClick={() => deletarUnicoUsuario(rowdata)} icon="pi pi-times" severity="danger" aria-label="Cancel"></Button>
-  
+
   // }
   // const deletarUnicoUsuario = (data) => {
   //   const confirma = window.confirm("Deseja apagar?");
@@ -58,32 +58,36 @@ export default function Home() {
   const Seleciona = (e) => {
     setSelectedProducts(e.value)
     setDisplayButton(e.value.length === 0 ? 'none' : 'block')
-   
+
   }
 
   const cabecalho = () => {
-      return (
-       <><><label>Nome</label><Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
-       <i className=" pi pi-trash"></i> </Button></></>
-      )
+    return (
+      <><><label>Nome</label>
+        <Button label="Excluir usúarios selecionados" severity="danger" rounded
+          onClick={deletarVariosUsuarios} className="botão-remover"
+          style={{ display: displayButton }}>
+          <i className=" pi pi-trash"></i>
+        </Button></></>
+    )
   }
   return (
-    
+
     <div className='content contentBDTable'>
 
       {/* <Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
       </Button> */}
 
-      <DataTable  value={serviceData} scrollable scrollHeight="70vh" className='tabela'
+      <DataTable value={serviceData} scrollable scrollHeight="70vh" className='tabela'
         dataKey="id"
         selectionMode={rowClick ? null : 'checkbox'}
         selection={selectedProducts}
         onSelectionChange={Seleciona}
-        tableStyle={{ Width: '50rem',height:'73vh' }}>
+        tableStyle={{ Width: '50rem', height: '73vh' }}>
 
         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-        <Column  field="name" header={cabecalho}></Column>
-        <Column  field="slug" header="Email"></Column>
+        <Column field="name" header={cabecalho}></Column>
+        <Column field="slug" header="Email"></Column>
         {/* <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column> */}
 
       </DataTable>
