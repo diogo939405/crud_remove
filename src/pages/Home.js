@@ -63,7 +63,7 @@ export default function Home() {
 
   const cabecalho = () => {
       return (
-       <><><label></label>Nome</label><Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
+       <><><label>Nome</label><Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
        <i className=" pi pi-trash"></i> </Button></></>
       )
   }
