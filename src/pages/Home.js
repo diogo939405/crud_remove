@@ -61,14 +61,21 @@ export default function Home() {
 
   }
 
+  
+
   const cabecalho = () => {
     return (
-      <><><label>Nome</label>
-        <Button label="Excluir usúarios selecionados" severity="danger" rounded
-          onClick={deletarVariosUsuarios} className="botão-remover"
-          style={{ display: displayButton }}>
-          <i className=" pi pi-trash"></i>
-        </Button></></>
+      <><>
+        <div className='box-botão'>
+          <label>Nome</label>
+          <Button label="" severity="danger" rounded
+            onClick={deletarVariosUsuarios} className="botão-remover"
+            style={{ display: displayButton }}>
+            <i className=" pi pi-trash" style={{ fontSize: '1.2rem' }} ></i>
+          </Button>
+        </div>
+      </></>
+
     )
   }
   return (
@@ -83,7 +90,7 @@ export default function Home() {
         selectionMode={rowClick ? null : 'checkbox'}
         selection={selectedProducts}
         onSelectionChange={Seleciona}
-        tableStyle={{ Width: '50rem', height: '73vh' }}>
+        tableStyle={{ Width: '50rem', height: '63.6vh' }}>
 
         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
         <Column field="name" header={cabecalho}></Column>

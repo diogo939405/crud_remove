@@ -35,10 +35,6 @@
   border: none;
 }
 
-
-
-
-
 table.p-datatable-table {
   border-collapse: collapse;
 }
@@ -49,6 +45,7 @@ table.p-datatable-table td, table.p-datatable-table th {
 
 table.p-datatable-table tr:nth-child(even) {
   background: #e9d9d9; /*Cor alternada das rows da tabela*/
+ 
 }
 
 .p-datatable .p-datatable-tbody > tr {
@@ -61,15 +58,24 @@ table.p-datatable-table tr:nth-child(even) {
   z-index: 1;
   background: #976363;
   border: none;
+  display: flex;
   /* box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
   
   border: 1px solid rgba(0,0,0,0.45);; */
   font: normal 600 14px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
     ;
     color: #fff;
+    top: 0.5vh;   
 }
 .botão-remover:hover{
   background: rgb(226, 224, 224) ;
   color: #976363;
-      
+    
+}
+
+.box-botão{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }

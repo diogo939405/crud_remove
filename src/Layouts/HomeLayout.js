@@ -2,7 +2,17 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import '../menu/menu'
 import './HomeLayout.css'
+import '../service/link.service'
+import { Cartilhas,Manuais,Adicionar } from '../service/link.service'
 <link href="https://fonts.cdnfonts.com/css/ropa-sans-2" rel="stylesheet"></link>
+
+
+let cartilha = Cartilhas
+let manuais = Manuais
+let adicionar = Adicionar
+
+
+
 
 
 export default function HomeLayout() {
@@ -40,8 +50,8 @@ export default function HomeLayout() {
                   <a href="https://rb1-condominio.com.br/extranet/seguranca/">SEGURANÇA +
                   </a>
                   <ul class="drop-down">
-                    <li>CARTILHAS</li>
-                    <li>MANUAIS</li>
+                  <li onClick={cartilha}>CARTILHAS</li>
+                    <li onClick={manuais}>MANUAIS</li>
                   </ul>
                 </div>
               </li>
@@ -51,7 +61,7 @@ export default function HomeLayout() {
                   <a href="https://rb1-condominio.com.br/extranet/cadastro/">CONTROLE DE ACESSO +
                   </a>
                   <ul class="drop-down">
-                 <li>ADICIONAR</li>
+                 <li onClick={adicionar}>ADICIONAR</li>
                    <li>REMOVER</li> 
 
                   </ul>
