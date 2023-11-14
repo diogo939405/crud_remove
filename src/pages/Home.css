@@ -54,7 +54,7 @@ table.p-datatable-table tr:nth-child(even) {
 }
 
 .botão-remover{
-  right: 6.0rem;
+  right: 6.2rem;
   bottom: 0.8rem;
   z-index: 1;
   background: #976363;
@@ -71,7 +71,10 @@ table.p-datatable-table tr:nth-child(even) {
   background: rgb(226, 224, 224) ;
   color: #976363;
   border: none;
-    
+}
+
+.botão-remover::after{
+  border: none;
 }
 
 .box-botão{
