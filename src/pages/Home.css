@@ -5,30 +5,34 @@
   border-radius: 100px;
 }
 
-.contentBDTable{
-  margin-left:140px;
+.contentBDTable {
+  margin: 0 auto;
   width: 80%;
 }
 
 .p-datatable-wrapper::-webkit-scrollbar {
   background: rgb(105, 38, 38);
-  border-radius: 0px 15px 15px 0px;            /* width of the entire scrollbar */
+  border-radius: 0px 15px 15px 0px;
+  /* width of the entire scrollbar */
 }
 
 .p-datatable-wrapper::-webkit-scrollbar-thumb {
-  background-color: rgb(233, 233, 233);    /* color of the scroll thumb */
-  border-radius: 0px 15px 15px 0px;       /* roundness of the scroll thumb */
-  border: 3px double rgb(255, 255, 255);  /* creates padding around scroll thumb */
+  background-color: rgb(233, 233, 233);
+  /* color of the scroll thumb */
+  border-radius: 0px 15px 15px 0px;
+  /* roundness of the scroll thumb */
+  border: 3px double rgb(255, 255, 255);
+  /* creates padding around scroll thumb */
 }
 
-.p-datatable-wrapper{
+.p-datatable-wrapper {
   border-radius: 15px;
   border: inset 2px #bdbdbd;
-  -webkit-box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45); 
-  box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
+  -webkit-box-shadow: 2px 4px 5px -1px rgba(0, 0, 0, 0.45);
+  box-shadow: 2px 4px 5px -1px rgba(0, 0, 0, 0.45);
 }
 
-.p-datatable .p-datatable-thead > tr > th {
+.p-datatable .p-datatable-thead>tr>th {
   color: #f7f3f3;
   background-color: #976363;
   padding: 18px 3px;
@@ -39,21 +43,26 @@
 table.p-datatable-table {
   border-collapse: collapse;
 }
-table.p-datatable-table td, table.p-datatable-table th {
-  border: 1px solid #b59999; /*Cor da borda das células da tabela*/
+
+table.p-datatable-table td,
+table.p-datatable-table th {
+  border: 1px solid #b59999;
+  /*Cor da borda das células da tabela*/
   padding: 3px 2px;
 }
 
 table.p-datatable-table tr:nth-child(even) {
-  background: #e9d9d9; /*Cor alternada das rows da tabela*/
- 
+  background: #e9d9d9;
+  /*Cor alternada das rows da tabela*/
+
 }
 
-.p-datatable .p-datatable-tbody > tr {
-  background: #f3eaea;  /*Cor base da tabela*/
+.p-datatable .p-datatable-tbody>tr {
+  background: #f3eaea;
+  /*Cor base da tabela*/
 }
 
-.botão-remover{
+.botão-remover {
   right: 6.2rem;
   bottom: 0.8rem;
   z-index: 1;
@@ -63,23 +72,43 @@ table.p-datatable-table tr:nth-child(even) {
   /* box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
     border: 1px solid rgba(0,0,0,0.45);; */
   font: normal 600 14px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
-    ;
-    color: #fff;
-    top: 0.5vh;   
+  ;
+  color: #fff;
+  top: 0.5vh;
+  padding: 0px;
+  height: 19px;
+  margin-top: -8px;
 }
-.botão-remover:hover{
-  background: rgb(226, 224, 224) ;
+
+.botão-remover:hover {
+  background: rgb(226, 224, 224);
   color: #976363;
   border: none;
 }
 
-.botão-remover::after{
+.botão-remover::after {
   border: none;
 }
 
-.box-botão{
+.box-botão {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
+}
+
+@media only screen and (max-width: 800px) {
+  .contentBDTable {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contentBDTable {
+    margin: 0px 5px;
+  }
+
+  body {
+    grid-template-rows: 5px;
+  }
 }

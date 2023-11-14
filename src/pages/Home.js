@@ -61,14 +61,14 @@ export default function Home() {
 
   }
 
-  
+
 
   const cabecalho = () => {
     return (
       <><>
         <div className='box-botão'>
           <label>Nome</label>
-          <Button label="" severity="danger" rounded
+          <Button label=""
             onClick={deletarVariosUsuarios} className="botão-remover"
             style={{ display: displayButton }}>
             <i className=" pi pi-trash" style={{ fontSize: '1.2rem' }} ></i>

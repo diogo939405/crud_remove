@@ -87,7 +87,6 @@ export default function HomeLayout() {
         </div>
       </header>
       <body>
-        <p></p>
       </body>
       <Outlet />
       <footer className='footer'>
