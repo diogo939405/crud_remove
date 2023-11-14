@@ -78,7 +78,7 @@ export default function HomeLayout() {
 
               <li class="nav-link">
                 <div className='drop-down-catch'>
-                  <a href="#">SAIR</a>
+                  <a>SAIR</a>
                 </div>
               </li>
 
