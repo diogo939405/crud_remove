@@ -92,7 +92,7 @@ export default function Home() {
         onSelectionChange={Seleciona}
         tableStyle={{ Width: '50rem', height: '63.6vh' }}>
 
-        <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
+        <Column selectionMode="multiple" headerStyle={{ width: '4.9rem' }}></Column>
         <Column field="name" header={cabecalho}></Column>
         <Column field="slug" header="Email"></Column>
         {/* <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column> */}

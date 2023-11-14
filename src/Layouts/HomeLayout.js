@@ -3,13 +3,17 @@ import { Outlet } from 'react-router-dom'
 import '../menu/menu'
 import './HomeLayout.css'
 import '../service/link.service'
-import { Cartilhas,Manuais,Adicionar } from '../service/link.service'
+import { Cartilhas, Manuais, Adicionar, Lgpd, Anirvesariantes, Controle, Principal } from '../service/link.service'
 <link href="https://fonts.cdnfonts.com/css/ropa-sans-2" rel="stylesheet"></link>
 
 
 let cartilha = Cartilhas
 let manuais = Manuais
 let adicionar = Adicionar
+let lgpd = Lgpd
+let aniversariantes = Anirvesariantes
+let controle = Controle
+let principal = Principal
 
 
 
@@ -25,21 +29,21 @@ export default function HomeLayout() {
             <ul class="nav-links">
               <li class="nav-link">
                 <div className='drop-down-catch'>
-                  <a href="https://rb1-condominio.com.br/extranet/">PRINCIPAL</a>
+                  <a onClick={principal} >PRINCIPAL</a>
                 </div>
               </li>
               <span class="nav-link-detail">|</span>
 
               <li class="nav-link">
                 <div className='drop-down-catch'>
-                  <a href="https://rb1-condominio.com.br/extranet/aniversariantes/">ANIVERSARIANTES</a>
+                  <a onClick={aniversariantes}>ANIVERSARIANTES</a>
                 </div>
               </li>
               <span class="nav-link-detail">|</span>
 
               <li class="nav-link">
                 <div className='drop-down-catch'>
-                  <a href="https://rb1-condominio.com.br/extranet/lgpd/">LGPD</a>
+                  <a onClick={lgpd}>LGPD</a>
                 </div>
               </li>
               <span class="nav-link-detail">|</span>
@@ -50,7 +54,7 @@ export default function HomeLayout() {
                   <a href="https://rb1-condominio.com.br/extranet/seguranca/">SEGURANÇA +
                   </a>
                   <ul class="drop-down">
-                  <li onClick={cartilha}>CARTILHAS</li>
+                    <li onClick={cartilha}>CARTILHAS</li>
                     <li onClick={manuais}>MANUAIS</li>
                   </ul>
                 </div>
@@ -58,20 +62,20 @@ export default function HomeLayout() {
               <span class="nav-link-detail">|</span>
               <li class="nav-link services">
                 <div className='drop-down-catch'>
-                  <a href="https://rb1-condominio.com.br/extranet/cadastro/">CONTROLE DE ACESSO +
+                  <a onClick={controle}>CONTROLE DE ACESSO +
                   </a>
                   <ul class="drop-down">
-                 <li onClick={adicionar}>ADICIONAR</li>
-                   <li>REMOVER</li> 
+                    <li onClick={adicionar}>ADICIONAR</li>
+                    <li>REMOVER</li>
 
                   </ul>
                 </div>
               </li>
 
               <span class="nav-link-detail">|</span>
-             
-              
-              
+
+
+
               <li class="nav-link">
                 <div className='drop-down-catch'>
                   <a href="#">SAIR</a>

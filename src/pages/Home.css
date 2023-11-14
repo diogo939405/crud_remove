@@ -33,6 +33,7 @@
   background-color: #976363;
   padding: 18px 3px;
   border: none;
+
 }
 
 table.p-datatable-table {
@@ -53,15 +54,14 @@ table.p-datatable-table tr:nth-child(even) {
 }
 
 .botão-remover{
-  left: 10rem;
+  right: 6.0rem;
   bottom: 0.8rem;
   z-index: 1;
   background: #976363;
   border: none;
   display: flex;
   /* box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
-  
-  border: 1px solid rgba(0,0,0,0.45);; */
+    border: 1px solid rgba(0,0,0,0.45);; */
   font: normal 600 14px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
     ;
     color: #fff;
@@ -70,6 +70,7 @@ table.p-datatable-table tr:nth-child(even) {
 .botão-remover:hover{
   background: rgb(226, 224, 224) ;
   color: #976363;
+  border: none;
     
 }
 
