@@ -1,12 +1,12 @@
 .content {
-  margin-top: -410px;
+  margin-top: -410px auto;
   width: 50rem;
   margin-left: 280px;
   border-radius: 100px;
 }
 
 .contentBDTable {
-  margin: 0 auto;
+  margin: 3.6vh auto;
   width: 80%;
 }
 
@@ -99,16 +99,52 @@ table.p-datatable-table tr:nth-child(even) {
 
 @media only screen and (max-width: 800px) {
   .contentBDTable {
-    width: 50%;
+    margin: 0px 45px ;
+    width: 63%;
+    /* Centralizar a tabela duvida? */
+  }
+ 
+}
+
+@media only screen and (max-width: 620px) {
+  .contentBDTable {
+    margin: 0px 48px;
+    width: 62,4%;
+  }
+
+  .botão-remover{
+     
+      right: 5rem;
+     
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
   .contentBDTable {
-    margin: 0px 5px;
+    margin: 0px 20px;
+    width: 63%;
   }
 
-  body {
-    grid-template-rows: 5px;
+  .botão-remover{
+      top:-2vh;
+      right: 2rem;
+      /* ver a melhor posição para o botão? */
   }
+ 
+
+  /* body {
+    grid-template-rows: 5px;
+  } */
+}
+@media only screen and (max-width: 360px) {
+  .contentBDTable {
+    margin: 0px 5px;
+    width: 93%;
+  }
+
+  .botão-remover{
+    top:-2vh;
+    right: 2rem;
+    /* ver a melhor posição para o botão? */
+}
 }

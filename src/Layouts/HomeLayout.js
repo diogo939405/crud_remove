@@ -97,7 +97,7 @@ export default function HomeLayout() {
           </p>
           <div className='info'>
             <span className='TextoRodape2'> +55 (21) 2106-1255</span>
-            <span className='TextoRodape2'><i className=" pi pi-envelope" ></i> rb1@rb1.com.br</span>
+            <span className='TextoRodape2'><i className=" pi pi-envelope" style={{fontSize: '0.3rem'}} ></i> rb1@rb1.com.br</span>
           </div>
         </div>
       </footer>
