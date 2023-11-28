@@ -6,6 +6,10 @@ import { Button } from 'primereact/button';
 import axios from "axios"
 import './Home.css'
 import 'primeicons/primeicons.css';
+// import { library, icon } from '@fortawesome/fontawesome-svg-core'
+// import { faCamera } from '@fortawesome/free-solid-svg-icons'
+
+// library.add(faCamera)
 
 export default function Home() {
   const [displayButton, setDisplayButton] = useState('none')

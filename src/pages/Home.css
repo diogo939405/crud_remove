@@ -98,8 +98,8 @@ table.p-datatable-table tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 800px) {
-  .contentBDTable {
-    margin: 0px 45px ;
+  .p-datatable {
+    margin: 0 auto ;
     width: 63%;
     /* Centralizar a tabela duvida? */
   }
@@ -107,8 +107,8 @@ table.p-datatable-table tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 620px) {
-  .contentBDTable {
-    margin: 0px 48px;
+  .p-datatable {
+    margin: 0 auto ;
     width: 62,4%;
   }
 
@@ -120,8 +120,8 @@ table.p-datatable-table tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 480px) {
-  .contentBDTable {
-    margin: 0px 20px;
+  .p-datatable {
+    margin: 0 auto ;
     width: 63%;
   }
 
@@ -137,8 +137,8 @@ table.p-datatable-table tr:nth-child(even) {
   } */
 }
 @media only screen and (max-width: 360px) {
-  .contentBDTable {
-    margin: 0px 5px;
+  .p-datatable {
+    margin: 0 auto ;
     width: 93%;
   }
 

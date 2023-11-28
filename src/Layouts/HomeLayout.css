@@ -33,10 +33,9 @@ body {
     /* background: #d8d8d8; */
 }
 
-.toggle-button{
+.toggle-button {
     color: wheat;
     font-Size: 5.0rem;
-    position: absolute;
     bottom: 79vh;
     right: 1rem;
     display: none;
@@ -44,9 +43,10 @@ body {
     justify-content: space-between;
     width: 30px;
     height: 21px;
+    position: fixed;
 }
 
-.toggle-button .bar{
+.toggle-button .bar {
     height: 3px;
     width: 100%;
     background-color: #fff;
@@ -59,7 +59,7 @@ body {
     padding-right: 60px;
     margin-top: -55px;
     list-style-type: none;
-    
+
 }
 
 .nav-links {
@@ -201,10 +201,10 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
-    .corpo{
-        width:100% ;
+    .corpo {
+        width: 100%;
     }
-    
+
     .footer {
         width: 100%;
         padding: 0 85px 0 50px;
@@ -229,20 +229,34 @@ footer {
 
     }
 
-    .toggle-button{
+    .toggle-button {
         display: flex;
         right: 10rem;
     }
-    .nav-link{
+
+    .nav-link {
         /* display: none; */
     }
-    ul.nav-links{
+
+    ul.nav-links {
         /* display: none; */
     }
-    ul.nav-links{
+
+    ul.nav-links {
         flex-direction: column;
         align-items: flex-start;
+        position: fixed;
+        z-index: 10;
+        background-color: rgb(155 51 51 / 71%);
+        border-radius: 10px;
+        align-items: center;
+        top: 50px;
+        right: 65px;
     }
+    .nav-link-detail { display: none;
+    }
+
+
     /* .navbar .nav-links ul{
         flex-direction: column;
         width: 100%;
@@ -251,14 +265,14 @@ footer {
         text-align: center;
     } */
 
-  }
+}
 
 @media only screen and (max-width: 620px) {
 
     .corpo {
-        width: 70%;
+        /*width: 70%;*/
     }
-    
+
     .footer {
         width: 100%;
         padding: 0 50px 0 50px;
@@ -284,13 +298,13 @@ footer {
     }
 
 
-}   
+}
 
 
 @media only screen and (max-width: 480px) {
 
     .corpo {
-        width: 53%;
+        /*width: 53%;*/
     }
 
     .footer {
@@ -316,28 +330,32 @@ footer {
         margin-bottom: 0.5px;
 
     }
+
     /* conserta o footer? */
 
 }
+
 @media only screen and (max-width: 360px) {
     .corpo {
-        width: 41%;
+        /*width: 41%;*/
     }
- 
+
     .footer {
         width: 100%;
         padding: 0 15px 0 15px;
         margin-bottom: 0.5px;
         height: 6.5vh;
     }
+
     .fotoFooter {
         float: left;
         margin-top: 8px;
         width: 35px;
         height: 20px;
     }
+
     .TextoRodape {
-        
+
         margin-top: 18px;
         font-size: 0.35rem;
     }
