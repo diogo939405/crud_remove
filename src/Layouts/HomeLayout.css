@@ -261,10 +261,14 @@ footer {
         align-items: center;
         top: 70px;
         right: 15px;
-        display: none;
+        /* display: none; */
         
     }
     .nav-link-detail { display: none;
+    }
+    .drop-down{
+        right: 100px;
+        top: 250px;
     }
 
 
