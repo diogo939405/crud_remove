@@ -171,7 +171,7 @@ footer {
     background: url(../imagens/fundoo.png);
     color: #eee;
     ;
-    padding: 0 50px 0 50px;
+    padding: 0 60px 0 50px;
     height: 8vh;
     margin-top: 3vh;
 
@@ -184,15 +184,15 @@ footer {
 
 .TextoRodape {
     float: left;
-    margin-top: 16px;
+    margin-top: 20px;
     margin-left: 10px;
-    font-size: 1.2rem;
+    font-size: 0.85rem;
 }
 
 .TextoRodape2 {
     float: right;
     margin-top: 16px;
-    font-size: 1.2rem;
+    font-size: 0.85rem;
 }
 
 .info {
@@ -213,15 +213,20 @@ footer {
 
     .TextoRodape {
 
-        margin-bottom: 0.5px;
-        font-size: 0.8rem;
+        margin-top: 23px;
+        font-size: 0.6rem;
+        margin-left: 1px;
+
     }
 
     .TextoRodape2 {
         float: right;
-        margin-bottom: 0.5px;
-        font-size: 0.8rem;
+        margin-top: 23px;
+        font-size: 0.6rem;
+        
+        
     }
+   
 
     .fotoFooter {
         float: left;
@@ -231,27 +236,33 @@ footer {
 
     .toggle-button {
         display: flex;
-        right: 10rem;
+        right:2rem;
+    }
+    a{
+        color: #333333;
+        text-decoration: none;
+        font: normal 700 12px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
+        ;
+        position: relative;
+
+    }
+    a:hover{
+        color: #b31c1f;
     }
 
-    .nav-link {
-        /* display: none; */
-    }
-
-    ul.nav-links {
-        /* display: none; */
-    }
-
+   
     ul.nav-links {
         flex-direction: column;
         align-items: flex-start;
         position: fixed;
         z-index: 10;
-        background-color: rgb(155 51 51 / 71%);
+        background-color: #e8e8e8;
         border-radius: 10px;
         align-items: center;
-        top: 50px;
-        right: 65px;
+        top: 70px;
+        right: 15px;
+        display: none;
+        
     }
     .nav-link-detail { display: none;
     }
@@ -282,13 +293,13 @@ footer {
     .TextoRodape {
 
         margin-bottom: 0.5px;
-        font-size: 0.6rem;
+        font-size: 0.4rem;
     }
 
     .TextoRodape2 {
         float: right;
         margin-bottom: 0.5px;
-        font-size: 0.6rem;
+        font-size: 0.4rem;
     }
 
     .fotoFooter {
@@ -316,13 +327,13 @@ footer {
     .TextoRodape {
 
         margin-bottom: 0.5px;
-        font-size: 0.45rem;
+        font-size: 0.35rem;
     }
 
     .TextoRodape2 {
         float: right;
         margin-bottom: 0.5px;
-        font-size: 0.45rem;
+        font-size: 0.35rem;
     }
 
     .fotoFooter {
@@ -342,7 +353,7 @@ footer {
 
     .footer {
         width: 100%;
-        padding: 0 15px 0 15px;
+        padding: 0 55px 0 15px;
         margin-bottom: 0.5px;
         height: 6.5vh;
     }
@@ -357,13 +368,13 @@ footer {
     .TextoRodape {
 
         margin-top: 18px;
-        font-size: 0.35rem;
+        font-size: 0.25rem;
     }
 
     .TextoRodape2 {
         float: right;
         margin-top: 18px;
-        font-size: 0.35rem;
+        font-size: 0.25rem;
     }
 
     .fotoFooter {
