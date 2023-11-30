@@ -1,5 +1,16 @@
-// const menuMobile = document.querySelector(".toggle-button")
-// const nav = document.querySelector(".nav-links")
+export function ToggleP() {
+    let p = document.getElementById('navbar')
+    if (p.style.display === 'none') {
+        p.style.display = 'block';
+    } else {
+        p.style.display = 'none';
+    }
 
-// menuMobile.addEventListener("click", () => console.log('oie') )
-// menuMobile.addEventListener("click", () => nav.classList.toggle("active"))
+    // //torna essa função imediata
+    //     var CriarEstilo = 1;
+    //     if (CriarEstilo === 1) {
+    //         p.style.display = 'none';
+    //         CriarEstilo = 0;
+    //     }
+}
+

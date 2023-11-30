@@ -200,7 +200,32 @@ footer {
 
 }
 
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+.hamburger::after,
+.hamburger::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
 @media only screen and (max-width: 800px) {
+    .hamburger {
+        display: block;
+        z-index: 1;
+    }
+
     .corpo {
         width: 100%;
     }
@@ -223,10 +248,10 @@ footer {
         float: right;
         margin-top: 23px;
         font-size: 0.6rem;
-        
-        
+
+
     }
-   
+
 
     .fotoFooter {
         float: left;
@@ -236,22 +261,27 @@ footer {
 
     .toggle-button {
         display: flex;
-        right:2rem;
+        right: 2rem;
     }
-    a{
-        color: #333333;
-        text-decoration: none;
-        font: normal 700 12px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
-        ;
+
+    a {
+        color: #FFF;
+        font: normal 700 15px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
+        text-shadow: 1px 1px #6d4646;
         position: relative;
 
     }
-    a:hover{
-        color: #b31c1f;
+
+    a:hover {
+        color: #d37b7b;
+        text-shadow: 1px 1px #2d2222;
     }
 
-   
-    ul.nav-links {
+    .navbar {
+        display: none;
+    }
+
+    .nav-links {
         flex-direction: column;
         align-items: flex-start;
         position: fixed;
@@ -259,16 +289,31 @@ footer {
         background-color: #e8e8e8;
         border-radius: 10px;
         align-items: center;
-        top: 70px;
-        right: 15px;
-        /* display: none; */
-        
+        top: 100px;
+        left: 0px;
+        gap: 0px;
+        border: inset 3px #bdbdbd;
+        background-color: rgb(61 61 61 / 62%);
+        box-shadow: 1px 1px 6px -1px rgba(0, 0, 0, 0.45);
+        border-radius: 0px 10px 10px 0px;
     }
-    .nav-link-detail { display: none;
+
+    .nav-link,
+    .drop-down li {
+        padding: 10px 10px 0px 10px;
     }
-    .drop-down{
+
+    .nav-link-detail {
+        display: none;
+    }
+
+    .drop-down {
         right: 100px;
         top: 250px;
+    }
+
+    .drop-down-catch {
+        height: 40px;
     }
 
 

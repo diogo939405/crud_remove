@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import '../menu/menu'
 import './HomeLayout.css'
 import '../service/link.service'
-import '../service/menuMobile'
+import  {ToggleP} from  '../service/menuMobile'
 import { Cartilhas, Manuais, Adicionar, Lgpd, Anirvesariantes, Controle, Principal } from '../service/link.service'
 <link href="https://fonts.cdnfonts.com/css/ropa-sans-2" rel="stylesheet"></link>
 
@@ -16,23 +16,24 @@ let lgpd = Lgpd
 let aniversariantes = Anirvesariantes
 let controle = Controle
 let principal = Principal
+let toggleP = ToggleP
 
-
-
-
+console.log(document.getElementById('navbar'))
 
 export default function HomeLayout() {
   return (
+    
     <div className='corpo' >
       <header className='cabecalho'>
         <img className='foto' src="https://rb1-condominio.com.br/extranet/wp-content/uploads/2023/08/Logo_top1-1-e1653228986853-meno.png" width="107px" height="61px" alt='cabeçalho'></img>
-        <p href='#' className='toggle-button' >
+        {/* <p id='foo' href='#' className='toggle-button' >
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-          </p> 
+        </p> */}
+        <button id='hamburguer' className="hamburger" value="toggle" onClick={toggleP}></button>
         <div class="container">
-          <nav class="navbar">
+          <nav id='navbar' className="navbar">
             <ul class="nav-links">
               <li class="nav-link">
                 <div className='drop-down-catch'>
@@ -112,4 +113,3 @@ export default function HomeLayout() {
 
   )
 }
-// 📞
