@@ -59,7 +59,7 @@ export default function HomeLayout() {
 
               <li class="nav-link services">
                 <div className='drop-down-catch'>
-                  <a href="https://rb1-condominio.com.br/extranet/seguranca/">SEGURANÇA +
+                  <a href="https://rb1-condominio.com.br/extranet/seguranca/">SEGURANÇddA +
                   </a>
                   <ul class="drop-down">
                     <li onClick={cartilha}>CARTILHAS</li>
