@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
@@ -44,7 +44,7 @@ export default function Home() {
   const deleteUser = (data) => {
     axios.delete(`${apiUrl}/delete/${data.id}`)
       .then(res => {
-       Navigate('/')
+       window.location.reload(true);
       })
       .catch(er => console.log)
   }
