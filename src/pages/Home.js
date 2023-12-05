@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,location } from 'react'
 import { Outlet } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -44,11 +44,12 @@ export default function Home() {
   const deleteUser = (data) => {
     axios.delete(`${apiUrl}/delete/${data.id}`)
       .then(res => {
-        window.location.reload()
+        location.reload();
       })
+      .catch(er => console.log(er))
   }
 
-  const deletarVariosUsuarios = (ee) => {
+  const deletarVariosUsuarios = () => {
     const confirma = window.confirm("Deseja apagar?");
     if (confirma) {
       selectedProducts.forEach(element => {
