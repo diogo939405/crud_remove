@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+// import { useRouter } from 'next/navigation'
 import { Outlet } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -16,6 +17,7 @@ export default function Home() {
   const [serviceData, setServiceData] = useState([{}]);
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
+  // const router = useRouter();
 
   const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
   useEffect(() => {
@@ -46,7 +48,8 @@ export default function Home() {
       .then(res => {
        window.location.reload(true);
       })
-      .catch(er => console.log)
+       .catch(er => console.log);
+      //  router.refresh();
   }
 
   const deletarVariosUsuarios = () => {
