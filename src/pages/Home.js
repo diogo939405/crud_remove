@@ -46,10 +46,10 @@ export default function Home() {
   const deleteUser = (data) => {
     axios.delete(`${apiUrl}/delete/${data.id}`)
       .then(res => {
-       window.location.reload(true);
+        window.location.reload(true);
       })
-       .catch(er => console.log);
-      //  router.refresh();
+      .catch(er => console.log);
+    //  router.refresh();
   }
 
   const deletarVariosUsuarios = () => {
@@ -69,7 +69,19 @@ export default function Home() {
 
   }
 
-
+  const cabecalho2 = () => {
+    return (
+      <><>
+        <div>
+          <label id='titulo'>Email</label>
+          <Button label='Atualizar Dados' className='botao-atualizar'>
+            <i className="pi pi-spin pi-undo"
+             style={{ fontSize: '1rem' }}></i>
+          </Button>
+        </div>
+      </></>
+    )
+  }
 
   const cabecalho = () => {
     return (
@@ -102,7 +114,7 @@ export default function Home() {
 
         <Column selectionMode="multiple" headerStyle={{ width: '5.3rem' }}></Column>
         <Column field="name" header={cabecalho}></Column>
-        <Column field="slug" header="Email"></Column>
+        <Column field="slug" header={cabecalho2}></Column>
         {/* <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column> */}
 
       </DataTable>

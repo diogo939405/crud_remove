@@ -62,6 +62,22 @@ table.p-datatable-table tr:nth-child(even) {
   /*Cor base da tabela*/
 }
 
+.botao-atualizar{
+  background-color: #976363;
+  border: 1px solid rgb(139, 92, 92);
+  box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
+  left: 15rem;
+  font: normal 600 14px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
+  ;
+  color: #fff;
+  top: 0.3vh;
+}
+.botao-atualizar:hover{
+  background: rgb(226, 224, 224);
+  color: #976363;
+  border: none;
+}
+
 .botão-remover {
   right: 6.2rem;
   bottom: 0.8rem;
@@ -83,7 +99,7 @@ table.p-datatable-table tr:nth-child(even) {
 .botão-remover:hover {
   background: rgb(226, 224, 224);
   color: #976363;
-  border: none;
+  padding: none ;
 }
 
 .botão-remover::after {
@@ -102,6 +118,12 @@ table.p-datatable-table tr:nth-child(even) {
     margin: 0 auto ;
     width: 100%;
     /* Centralizar a tabela duvida? */
+  }
+
+  .botao-atualizar{
+    left: 5rem;
+    padding: 5px 4px 4px 4px;
+    margin: 0 auto;
   }
  
 }
