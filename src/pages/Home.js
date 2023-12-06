@@ -7,6 +7,7 @@ import { Button } from 'primereact/button';
 import axios from "axios"
 import './Home.css'
 import 'primeicons/primeicons.css';
+
 // import { library, icon } from '@fortawesome/fontawesome-svg-core'
 // import { faCamera } from '@fortawesome/free-solid-svg-icons'
 
@@ -18,19 +19,29 @@ export default function Home() {
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
   const [getDados, setGetDados] = useState(true)
+  const [rowData, setRowData] = useState([])
+  const [columnDefs, setColumnDefs] = useState([
+    { field: 'name', headerName: 'Nome' },
+    // Using dot notation to access nested property
+    { field: 'slug', headerName: 'Slug' },
+  ]);
   // const router = useRouter();
 
   //const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
   const apiUrl = 'http://localhost:3010/';
+
 
   useEffect(() => {
     console.log('apiUrl: ' + apiUrl);
     fetch(`${apiUrl}getUsers`)
       .then((response) => response.json())
       .then((data) => {
-
-        console.log(data)
-        setServiceData(data);
+        if (data.length > 0) {
+          console.log(data)
+          setServiceData(data);
+          setRowData(data);
+          console.log('Row data ', data, 'rowdata', rowData);
+        }
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -38,12 +49,11 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    console.log('chamando update: ')
     fetch(`${apiUrl}update`)
-      .then((response) => response.json())
+      //  .then((response) => response.json())
       .then((data) => {
-        console.log(data)
-        setServiceData(data);
-        // getDadosLocais();
+        console.log('data em update', data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -61,12 +71,15 @@ export default function Home() {
   //   }
   // }
 
-  const deleteUser = (data) => {
-    axios.delete(`${apiUrl}delete/${data.id}`)
+  const deleteUser = async (data) => {
+    await axios.delete(`${apiUrl}delete/${data.id}`)
       .then(res => {
-        window.location.reload(true);
+        console.log(res)
+        //  window.location.href = "/"
+        // window.location.reload(true);
       })
       .catch(er => console.log);
+    window.location.href = "/"
     //  router.refresh();
   }
 
@@ -117,27 +130,33 @@ export default function Home() {
     )
   }
   return (
+    <>
+      {/* <div>fddfhdfhd
+        <AgGridReact
+          rowData={rowData}
+          columnDefs={columnDefs}
+        />
+      </div> */}
+      <div className='content contentBDTable'>
 
-    <div className='content contentBDTable'>
-
-      {/* <Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
+        {/* <Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
       </Button> */}
 
-      <DataTable value={serviceData} scrollable scrollHeight="70vh" className='tabela'
-        dataKey="id"
-        selectionMode={rowClick ? null : 'checkbox'}
-        selection={selectedProducts}
-        onSelectionChange={Seleciona}
-        tableStyle={{ Width: '50rem', height: '63.6vh' }}>
+        <DataTable value={serviceData} scrollable scrollHeight="70vh" className='tabela'
+          dataKey="id"
+          selectionMode={rowClick ? null : 'checkbox'}
+          selection={selectedProducts}
+          onSelectionChange={Seleciona}
+          tableStyle={{ Width: '50rem', height: '63.6vh' }}>
 
-        <Column selectionMode="multiple" headerStyle={{ width: '5.3rem' }}></Column>
-        <Column field="name" header={cabecalho}></Column>
-        <Column field="slug" header={cabecalho2}></Column>
-        {/* <Column header="Ações" body={botoes} style={{ minWidth: '2rem' }}  ></Column> */}
+          <Column selectionMode="multiple" headerStyle={{ width: '5.3rem' }}></Column>
+          <Column field="name" header={cabecalho}></Column>
+          <Column field="slug" header={cabecalho2}></Column>
 
-      </DataTable>
-      <Outlet />
-    </div>
+        </DataTable>
+        <Outlet />
+      </div>
+    </>
   )
 }
 
