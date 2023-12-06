@@ -21,7 +21,7 @@ export default function Home() {
 
   const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
   useEffect(() => {
-    fetch(`${apiUrl}/getUsers`)
+    fetch(`${apiUrl}getUsers`)
       .then((response) => response.json())
       .then((data) => {
 
