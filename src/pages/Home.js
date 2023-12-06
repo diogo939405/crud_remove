@@ -17,10 +17,14 @@ export default function Home() {
   const [serviceData, setServiceData] = useState([{}]);
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
+  const [getDados, setGetDados] = useState(true)
   // const router = useRouter();
 
-  const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
+  //const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
+  const apiUrl = 'http://localhost:3010/';
+
   useEffect(() => {
+    console.log('apiUrl: ' + apiUrl);
     fetch(`${apiUrl}getUsers`)
       .then((response) => response.json())
       .then((data) => {
@@ -32,6 +36,20 @@ export default function Home() {
         console.error('Error fetching data:', error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`${apiUrl}update`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setServiceData(data);
+        // getDadosLocais();
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [getDados]);
+
   // const botoes = (rowdata) => {
   //   return <Button onClick={() => deletarUnicoUsuario(rowdata)} icon="pi pi-times" severity="danger" aria-label="Cancel"></Button>
 
@@ -44,7 +62,7 @@ export default function Home() {
   // }
 
   const deleteUser = (data) => {
-    axios.delete(`${apiUrl}/delete/${data.id}`)
+    axios.delete(`${apiUrl}delete/${data.id}`)
       .then(res => {
         window.location.reload(true);
       })
@@ -74,9 +92,9 @@ export default function Home() {
       <><>
         <div>
           <label id='titulo'>Email</label>
-          <Button label='Atualizar Dados' className='botao-atualizar'>
+          <Button label='Atualizar Dados' className='botao-atualizar' onClick={() => setGetDados(!getDados)}>
             <i className="pi pi-spin pi-undo"
-             style={{ fontSize: '1rem' }}></i>
+              style={{ fontSize: '1rem' }}></i>
           </Button>
         </div>
       </></>
