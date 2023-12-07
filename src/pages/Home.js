@@ -53,7 +53,7 @@ export default function Home() {
     fetch(`${apiUrl}update`)
       //  .then((response) => response.json())
       .then((data) => {
-        window.location.reload(true);
+        // window.location.reload(true);
         console.log('data em update', data);
       })
       .catch((error) => {
