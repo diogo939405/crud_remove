@@ -39,8 +39,8 @@ export default function Home() {
         if (data.length > 0) {
           console.log(data)
           setServiceData(data);
-          setRowData(data);
-          console.log('Row data ', data, 'rowdata', rowData);
+          // setRowData(data);
+          // console.log('Row data ', data, 'rowdata', rowData);
         }
       })
       .catch((error) => {
