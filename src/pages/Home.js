@@ -50,6 +50,7 @@ export default function Home() {
 
   useEffect(() => {
     console.log('chamando update: ')
+    console.log(`URL DA ATUALIZAÇÃO ${apiUrl}update`)
     fetch(`${apiUrl}update`)
       //  .then((response) => response.json())
       .then((data) => {
@@ -106,7 +107,7 @@ export default function Home() {
       <><>
         <div>
           <label id='titulo'>Email</label>
-          <Button label='Atualizar Dados' className='botao-atualizar' onClick={() => setGetDados(!getDados)}>
+          <Button label='Atualizar Dados' className='botao-atualizar' onClick={() => { console.log('nnnnnnnnnnnnnnnn'); setGetDados(!getDados) }}>
             <i className="pi pi-spin pi-undo"
               style={{ fontSize: '1rem' }}></i>
           </Button>
