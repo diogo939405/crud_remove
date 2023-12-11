@@ -28,11 +28,15 @@ export default function Home() {
   // const router = useRouter();
 
   const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
-  // const apiUrl = 'http://localhost:3010/';
+  //const apiUrl = 'http://localhost:3010/';
 
 
   useEffect(() => {
     console.log('apiUrl: ' + apiUrl);
+    getUsers();
+  }, []);
+
+  const getUsers = async () => {
     fetch(`${apiUrl}getUsers`)
       .then((response) => response.json())
       .then((data) => {
@@ -46,21 +50,37 @@ export default function Home() {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, []);
 
-  useEffect(() => {
-    console.log('chamando update: ')
-    console.log(`URL DA ATUALIZAÇÃO ${apiUrl}update`)
-    fetch(`${apiUrl}update`)
-      //  .then((response) => response.json())
+  }
+
+
+  // useEffect(() => {
+  //   console.log('chamando update: ')
+  //   console.log(`URL DA ATUALIZAÇÃO ${apiUrl}update`)
+  //   fetch(`${apiUrl}update`)
+  //     .then((data) => {
+  //       // window.location.reload(true);
+  //       console.log('data em update', data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, [getDados]);
+
+
+  const updateUsers = async () => {
+    await fetch(`${apiUrl}update`)
       .then((data) => {
         // window.location.reload(true);
         console.log('data em update', data);
+        getUsers();
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, [getDados]);
+  }
+
+
 
   // const botoes = (rowdata) => {
   //   return <Button onClick={() => deletarUnicoUsuario(rowdata)} icon="pi pi-times" severity="danger" aria-label="Cancel"></Button>
@@ -107,7 +127,7 @@ export default function Home() {
       <><>
         <div>
           <label id='titulo'>Email</label>
-          <Button label='Atualizar Dados' className='botao-atualizar' onClick={() => { console.log('nnnnnnnnnnnnnnnn'); setGetDados(!getDados) }}>
+          <Button label='Atualizar Dados' className='botao-atualizar' onClick={updateUsers}>
             <i className="pi pi-spin pi-undo"
               style={{ fontSize: '1rem' }}></i>
           </Button>
