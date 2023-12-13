@@ -7,5 +7,46 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Dropdown Menu</title>
-    <style>
+    <head>
+        <style>
+            .loader{
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #f7f9fb;
+                transition: opacity 0.75s, visibility 0,75s;
+            }
+
+            .loader-hidden{
+                opacity: 0;
+                visibility: hidden;
+            }
+            .loader::after{
+                content: "";
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                border: 15px solid #ddd;
+                border-top-color: blue;
+                animation: loading 0.75s ease infinite;
+            }
+
+            @keyframes loading {
+                from{
+                    transform: rotate(0turn);
+                }
+                to{
+                    transform: rotate(1turn);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div  class="loader" onload=""></div>
+    </body>
    

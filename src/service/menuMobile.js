@@ -5,12 +5,8 @@ export function ToggleP() {
     } else {
         p.style.display = 'none';
     }
-
-    // //torna essa função imediata
-    //     var CriarEstilo = 1;
-    //     if (CriarEstilo === 1) {
-    //         p.style.display = 'none';
-    //         CriarEstilo = 0;
-    //     }
 }
+// export default function Load() {
+//     let l =document.getElementById('Load')
+// }
 

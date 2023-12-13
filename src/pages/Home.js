@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
+// import l from '../service/menuMobile'
 import axios from "axios"
 import './Home.css'
 import 'primeicons/primeicons.css';
@@ -93,14 +94,18 @@ export default function Home() {
   //   }
   // }
 
+  
+
   const deleteUser = async (data) => {
+    // l.classList.add(".loader")
     await axios.delete(`${apiUrl}delete/${data.id}`)
       .then(res => {
+
         console.log(res)
-        //  window.location.href = "/"
-        // window.location.reload(true);
+
       })
-      .catch(er => console.log);
+      .catch(er =>console.log);
+      // l.classList.add(".loader-hidden")
     window.location.href = "/"
     //  router.refresh();
   }
@@ -176,6 +181,8 @@ export default function Home() {
           <Column field="slug" header={cabecalho2}></Column>
 
         </DataTable>
+        {/* <div class="loader" id="load" onLoad={l}></div> */}
+
         <Outlet />
       </div>
     </>

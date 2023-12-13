@@ -22,10 +22,10 @@ const router = createBrowserRouter(
 
 function App() {
   return (
- 
-    <RouterProvider router={router}/>
-   
-  );
+    <div>
+       <RouterProvider router={router}/>
+    </div>
+    );
 }
 
 export default App;
