@@ -9,11 +9,6 @@ import axios from "axios"
 import './Home.css'
 import 'primeicons/primeicons.css';
 
-// import { library, icon } from '@fortawesome/fontawesome-svg-core'
-// import { faCamera } from '@fortawesome/free-solid-svg-icons'
-
-// library.add(faCamera)
-
 export default function Home() {
   const [displayButton, setDisplayButton] = useState('none')
   const [serviceData, setServiceData] = useState([{}]);
@@ -54,22 +49,8 @@ export default function Home() {
 
   }
 
-
-  // useEffect(() => {
-  //   console.log('chamando update: ')
-  //   console.log(`URL DA ATUALIZAÇÃO ${apiUrl}update`)
-  //   fetch(`${apiUrl}update`)
-  //     .then((data) => {
-  //       // window.location.reload(true);
-  //       console.log('data em update', data);
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching data:', error);
-  //     });
-  // }, [getDados]);
-
-
   const updateUsers = async () => {
+    showLoading();
     await fetch(`${apiUrl}update`)
       .then((data) => {
         // window.location.reload(true);
@@ -79,45 +60,30 @@ export default function Home() {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
+    hideLoading();
   }
-
-
-
-  // const botoes = (rowdata) => {
-  //   return <Button onClick={() => deletarUnicoUsuario(rowdata)} icon="pi pi-times" severity="danger" aria-label="Cancel"></Button>
-
-  // }
-  // const deletarUnicoUsuario = (data) => {
-  //   const confirma = window.confirm("Deseja apagar?");
-  //   if (confirma) {
-  //     deleteUser(data)
-  //   }
-  // }
-
-  
 
   const deleteUser = async (data) => {
-    // l.classList.add(".loader")
     await axios.delete(`${apiUrl}delete/${data.id}`)
       .then(res => {
-
         console.log(res)
-
       })
-      .catch(er =>console.log);
-      // l.classList.add(".loader-hidden")
-    window.location.href = "/"
-    //  router.refresh();
+      .catch(er => console.log);
+
   }
 
-  const deletarVariosUsuarios = () => {
+  const deletarVariosUsuarios = async () => {
+
     const confirma = window.confirm("Deseja apagar?");
     if (confirma) {
+      showLoading();
       selectedProducts.forEach(element => {
         console.log('papai', element)
         deleteUser(element)
-
       });
+      await getUsers()
+      hideLoading();
+      // window.location.href = "/"
     }
   }
 
@@ -125,6 +91,14 @@ export default function Home() {
     setSelectedProducts(e.value)
     setDisplayButton(e.value.length === 0 ? 'none' : 'block')
 
+  }
+
+  const hideLoading = () => {
+    document.getElementById('load').style.display = 'none';
+  }
+
+  const showLoading = () => {
+    document.getElementById('load').style.display = 'flex';
   }
 
   const cabecalho2 = () => {
@@ -143,7 +117,7 @@ export default function Home() {
 
   const cabecalho = () => {
     return (
-      <><>
+      <>
         <div className='box-botão'>
           <label>Nome</label>
           <Button label=""
@@ -152,22 +126,13 @@ export default function Home() {
             <i className=" pi pi-trash" style={{ fontSize: '1.2rem' }} ></i>
           </Button>
         </div>
-      </></>
-
+      </>
     )
   }
   return (
     <>
-      {/* <div>fddfhdfhd
-        <AgGridReact
-          rowData={rowData}
-          columnDefs={columnDefs}
-        />
-      </div> */}
       <div className='content contentBDTable'>
-
-        {/* <Button label="Excluir usúarios selecionados" severity="danger" rounded onClick={deletarVariosUsuarios} className="botão-remover" style={{ display: displayButton }}>
-      </Button> */}
+        <div class="loader" id="load"></div>
 
         <DataTable value={serviceData} scrollable scrollHeight="70vh" className='tabela'
           dataKey="id"
@@ -181,16 +146,10 @@ export default function Home() {
           <Column field="slug" header={cabecalho2}></Column>
 
         </DataTable>
-        {/* <div class="loader" id="load" onLoad={l}></div> */}
+
 
         <Outlet />
       </div>
     </>
   )
 }
-
-// margin-top: -450px;
-// width: 50rem;
-// margin-left: 200px;
-// border-radius: 100px;
-// }

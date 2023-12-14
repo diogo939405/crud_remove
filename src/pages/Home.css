@@ -62,17 +62,18 @@ table.p-datatable-table tr:nth-child(even) {
   /*Cor base da tabela*/
 }
 
-.botao-atualizar{
+.botao-atualizar {
   background-color: #976363;
   border: 1px solid rgb(139, 92, 92);
-  box-shadow: 2px 4px 5px -1px rgba(0,0,0,0.45);
+  box-shadow: 2px 4px 5px -1px rgba(0, 0, 0, 0.45);
   left: 15rem;
   font: normal 600 14px / 19px "Roboto", Helvetica, Arial, Verdana, sans-serif;
   ;
   color: #fff;
   top: 0.3vh;
 }
-.botao-atualizar:hover{
+
+.botao-atualizar:hover {
   background: rgb(226, 224, 224);
   color: #976363;
   border: none;
@@ -99,7 +100,7 @@ table.p-datatable-table tr:nth-child(even) {
 .botão-remover:hover {
   background-color: rgb(226, 224, 224);
   color: #976363;
-  padding: none ;
+  padding: none;
 }
 
 .botão-remover::after {
@@ -113,24 +114,25 @@ table.p-datatable-table tr:nth-child(even) {
 
 }
 
-.loader{
+.loader {
+  z-index: 1;
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  background-color: #f7f9fb;
-  transition: opacity 0.75s, visibility 0,75s;
+  transition: opacity 0.75s, visibility 0, 75s;
 }
 
-.loader-hidden{
+.loader-hidden {
   opacity: 0;
   visibility: hidden;
 }
-.loader::after{
+
+.loader::after {
   content: "";
   width: 75px;
   height: 75px;
@@ -140,61 +142,71 @@ table.p-datatable-table tr:nth-child(even) {
   animation: loading 0.75s ease infinite;
 }
 
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
 
 @media only screen and (max-width: 800px) {
   .p-datatable {
-    margin: 0 auto ;
+    margin: 0 auto;
     width: 100%;
     /* Centralizar a tabela duvida? */
   }
 
-  .botao-atualizar{
+  .botao-atualizar {
     left: 5rem;
     padding: 5px 4px 4px 4px;
     margin: 0 auto;
   }
- 
+
 }
 
 @media only screen and (max-width: 620px) {
   .p-datatable {
-    margin: 0 auto ;
+    margin: 0 auto;
     width: 100%;
   }
 
-  .botão-remover{
-     
-      right: 5rem;
-     
+  .botão-remover {
+
+    right: 5rem;
+
   }
 }
 
 @media only screen and (max-width: 480px) {
   .p-datatable {
-    margin: 0 auto ;
+    margin: 0 auto;
     width: 100%;
   }
 
-  .botão-remover{
-      top:-2vh;
-      right: 2rem;
-      /* ver a melhor posição para o botão? */
+  .botão-remover {
+    top: -2vh;
+    right: 2rem;
+    /* ver a melhor posição para o botão? */
   }
- 
+
 
   /* body {
     grid-template-rows: 5px;
   } */
 }
+
 @media only screen and (max-width: 360px) {
   .p-datatable {
-    margin: 0 auto ;
+    margin: 0 auto;
     width: 100%;
   }
 
-  .botão-remover{
-    top:-2vh;
+  .botão-remover {
+    top: -2vh;
     right: 2rem;
     /* ver a melhor posição para o botão? */
-}
+  }
 }
