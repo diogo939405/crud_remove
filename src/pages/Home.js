@@ -4,6 +4,8 @@ import { Outlet } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+
 // import l from '../service/menuMobile'
 import axios from "axios"
 import './Home.css'
@@ -14,18 +16,44 @@ export default function Home() {
   const [serviceData, setServiceData] = useState([{}]);
   const [rowClick, setRowClick] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState(null);
-  const [getDados, setGetDados] = useState(true)
-  const [rowData, setRowData] = useState([])
+
   const [columnDefs, setColumnDefs] = useState([
     { field: 'name', headerName: 'Nome' },
     // Using dot notation to access nested property
     { field: 'slug', headerName: 'Slug' },
   ]);
   // const router = useRouter();
+  var dataUser = {};
 
   const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
   //const apiUrl = 'http://localhost:3010/';
 
+  const confirm1 = () => {
+    confirmDialog({
+      message: 'Certeza que desejar apaga os usúarios selecionados?',
+      header: 'Confirmação',
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Sim',
+      rejectLabel:'Não',
+      accept,
+      reject
+    });
+  };
+
+  const accept = async () => {
+    showLoading();
+    await axios.delete(`${apiUrl}delete/${dataUser.id}`)
+      .then(res => {
+        console.log(res)
+      })
+      window.location.reload(true);
+
+    // toast.current.show({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
+  }
+
+  const reject = () => {
+    // toast.current.show({ severity: 'warn', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
+  }
 
   useEffect(() => {
     console.log('apiUrl: ' + apiUrl);
@@ -64,28 +92,29 @@ export default function Home() {
   }
 
   const deleteUser = async (data) => {
-    showLoading();
-    await axios.delete(`${apiUrl}delete/${data.id}`)
-      .then(res => {
-        console.log(res)
-      })
-      .catch(er => console.log);
-      hideLoading();
+    dataUser = data;
+    confirm1()
+    //  const confirma = window.confirm("Deseja apagar " + data.nome + "?");
+    // if (confirma) {
+    //   await axios.delete(`${apiUrl}delete/${data.id}`)
+    //     .then(res => {
+    //       console.log(res)
+    //     })
+    //     .catch(er => console.log);
+    // }
   }
 
   const deletarVariosUsuarios = async () => {
-    const confirma = window.confirm("Deseja apagar?");
-    if (confirma) {
-      showLoading();
-      selectedProducts.forEach(element => {
-        console.log('papai', element)
-        deleteUser(element)
-      });
-      await getUsers()
-      hideLoading();
-      // window.location.href = "/"
-    }
+    console.log('Hello, World!')
+    await selectedProducts.forEach(async element => {
+      console.log('papai', element)
+      await deleteUser(element)
+    });
+    await getUsers()
+    hideLoading();
+ 
   }
+  
 
   const Seleciona = (e) => {
     setSelectedProducts(e.value)
@@ -107,11 +136,7 @@ export default function Home() {
         <div>
           <label id='titulo'>Email</label>
           <Button label='Atualizar Dados' className='botao-atualizar' onClick={updateUsers}>
-            {/* <i className="pi pi-spin pi-undo"
-              style={{ fontSize: '1rem' }}></i> */}
           </Button>
-          {/* <label id='titulo'>Email</label>
-          <Button label='Atualizar Dados' className='botao-atualizar' onClick={showLoading}></Button> */}
         </div>
       </></>
     )
@@ -133,6 +158,7 @@ export default function Home() {
   }
   return (
     <>
+      <ConfirmDialog />
       <div className='content contentBDTable'>
         <div class="loader" id="load"></div>
 
