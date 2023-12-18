@@ -64,16 +64,16 @@ export default function Home() {
   }
 
   const deleteUser = async (data) => {
+    showLoading();
     await axios.delete(`${apiUrl}delete/${data.id}`)
       .then(res => {
         console.log(res)
       })
       .catch(er => console.log);
-
+      hideLoading();
   }
 
   const deletarVariosUsuarios = async () => {
-
     const confirma = window.confirm("Deseja apagar?");
     if (confirma) {
       showLoading();
@@ -107,9 +107,11 @@ export default function Home() {
         <div>
           <label id='titulo'>Email</label>
           <Button label='Atualizar Dados' className='botao-atualizar' onClick={updateUsers}>
-            <i className="pi pi-spin pi-undo"
-              style={{ fontSize: '1rem' }}></i>
+            {/* <i className="pi pi-spin pi-undo"
+              style={{ fontSize: '1rem' }}></i> */}
           </Button>
+          {/* <label id='titulo'>Email</label>
+          <Button label='Atualizar Dados' className='botao-atualizar' onClick={showLoading}></Button> */}
         </div>
       </></>
     )
