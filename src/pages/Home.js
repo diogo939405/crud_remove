@@ -61,8 +61,8 @@ export default function Home() {
   const toaste = () =>{
     toast.current.show({ severity: 'warn',
      summary: 'Atenção',
-      detail: 'Caso a tabela não tenha carregado, por favor clica no botão atualizar dados e aguarda o carregamento', 
-      life: 3000 });
+      detail: 'Caso a tabela não tenha carregado, por favor clicar no botão atualizar dados e aguarda o carregamento.', 
+      life: 5000 });
   }
 
   useEffect(() => {
