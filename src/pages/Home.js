@@ -28,7 +28,7 @@ export default function Home() {
   var ids = '';
 
   const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
-  // const apiUrl = 'http://localhost:3010/';
+  //const apiUrl = 'http://localhost:3010/';
 
   const confirm1 = async () => {
     await confirmDialog({
