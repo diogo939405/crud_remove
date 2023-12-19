@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 // import { useRouter } from 'next/navigation'
 import { Outlet } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable';
@@ -25,17 +25,18 @@ export default function Home() {
   ]);
   // const router = useRouter();
   var dataUser = {};
+  var ids = '';
 
-  const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
-  //const apiUrl = 'http://localhost:3010/';
+  //const apiUrl = 'https://blue-enchanting-macaw.cyclic.cloud/';
+  const apiUrl = 'http://localhost:3010/';
 
-  const confirm1 = () => {
-    confirmDialog({
+  const confirm1 = async () => {
+    await confirmDialog({
       message: 'Certeza que desejar apaga os usúarios selecionados?',
       header: 'Confirmação',
       icon: 'pi pi-exclamation-triangle',
       acceptLabel: 'Sim',
-      rejectLabel:'Não',
+      rejectLabel: 'Não',
       accept,
       reject
     });
@@ -43,11 +44,19 @@ export default function Home() {
 
   const accept = async () => {
     showLoading();
-    await axios.delete(`${apiUrl}delete/${dataUser.id}`)
-      .then(res => {
-        console.log(res)
-      })
-      window.location.reload(true);
+    try {
+      console.log('3 - apagando, ', ids)
+      await axios.delete(`${apiUrl}delete/${ids}`)
+        .then(async res => {
+          console.log(res)
+          await getUsers();
+          hideLoading();
+        })
+
+    } catch (error) {
+      console.log('error no delete ', error)
+    }
+
 
     // toast.current.show({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
   }
@@ -58,11 +67,13 @@ export default function Home() {
 
   const toast = useRef(null);
 
-  const toaste = () =>{
-    toast.current.show({ severity: 'warn',
-     summary: 'Atenção',
-      detail: 'Caso a tabela não tenha carregado, por favor clicar no botão atualizar dados e aguarda o carregamento.', 
-      life: 5000 });
+  const toaste = () => {
+    toast.current.show({
+      severity: 'warn',
+      summary: 'Atenção',
+      detail: 'Caso a tabela não tenha carregado, por favor clicar no botão atualizar dados e aguarda o carregamento.',
+      life: 5000
+    });
   }
 
   useEffect(() => {
@@ -77,7 +88,7 @@ export default function Home() {
         if (data.length > 0) {
           console.log(data)
           setServiceData(data);
-        }else{
+        } else {
           toaste();
         }
       })
@@ -103,27 +114,35 @@ export default function Home() {
   const deleteUser = async (data) => {
     dataUser = data;
     confirm1()
-    //  const confirma = window.confirm("Deseja apagar " + data.nome + "?");
-    // if (confirma) {
-    //   await axios.delete(`${apiUrl}delete/${data.id}`)
-    //     .then(res => {
-    //       console.log(res)
-    //     })
-    //     .catch(er => console.log);
-    // }
+  }
+
+  const montarIds = () => {
+    for (let i = 0; i < selectedProducts.length; i++) {
+      ids += selectedProducts[i].id;
+      if (i != selectedProducts.length - 1) {
+        ids += ';';
+      }
+    }
+    console.log(ids);
   }
 
   const deletarVariosUsuarios = async () => {
-    console.log('Hello, World!')
-    await selectedProducts.forEach(async element => {
-      console.log('papai', element)
-      await deleteUser(element)
-    });
+    montarIds();
+    confirm1()
     await getUsers()
     hideLoading();
- 
+    // await selectedProducts.forEach(async element => {
+    //   console.log('2 - iniciando a exclusão dentro do looping')
+    //   console.log('papai', element)
+    //   //await deleteUser(element)
+    // });
+    // console.log('99 - Vai pegar usuarios');
+    // 
+    // console.log('991 - Will hide');
+    // 
+    // window.location.reload(true);
   }
-  
+
 
   const Seleciona = (e) => {
     setSelectedProducts(e.value)
@@ -167,7 +186,7 @@ export default function Home() {
   }
   return (
     <>
-    <Toast ref={toast} />
+      <Toast ref={toast} />
       <ConfirmDialog />
       <div className='content contentBDTable'>
         <div class="loader" id="load"></div>
