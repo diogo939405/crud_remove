@@ -119,7 +119,7 @@ export default function Home() {
   const montarIds = () => {
     for (let i = 0; i < selectedProducts.length; i++) {
       ids += selectedProducts[i].id;
-      if (i != selectedProducts.length - 1) {
+      if (i !== selectedProducts.length - 1) {
         ids += ';';
       }
     }
