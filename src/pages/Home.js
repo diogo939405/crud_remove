@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
 // import { useRouter } from 'next/navigation'
 import { Outlet } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+import { Toast } from 'primereact/toast';
 
 // import l from '../service/menuMobile'
 import axios from "axios"
@@ -55,6 +56,15 @@ export default function Home() {
     // toast.current.show({ severity: 'warn', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
   }
 
+  const toast = useRef(null);
+
+  const toaste = () =>{
+    toast.current.show({ severity: 'warn',
+     summary: 'Atenção',
+      detail: 'Caso a tabela não tenha carregado, por favor clica no botão atualizar dados e aguarda o carregamento', 
+      life: 3000 });
+  }
+
   useEffect(() => {
     console.log('apiUrl: ' + apiUrl);
     getUsers();
@@ -67,8 +77,8 @@ export default function Home() {
         if (data.length > 0) {
           console.log(data)
           setServiceData(data);
-          // setRowData(data);
-          // console.log('Row data ', data, 'rowdata', rowData);
+        }else{
+          toaste();
         }
       })
       .catch((error) => {
@@ -81,7 +91,6 @@ export default function Home() {
     showLoading();
     await fetch(`${apiUrl}update`)
       .then((data) => {
-        // window.location.reload(true);
         console.log('data em update', data);
         getUsers();
       })
@@ -158,6 +167,7 @@ export default function Home() {
   }
   return (
     <>
+    <Toast ref={toast} />
       <ConfirmDialog />
       <div className='content contentBDTable'>
         <div class="loader" id="load"></div>
