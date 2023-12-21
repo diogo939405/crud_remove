@@ -72,7 +72,7 @@ export default function Home() {
       severity: 'warn',
       summary: 'Atenção',
       detail: 'Caso a tabela não tenha carregado, por favor clicar no botão atualizar dados e aguarda o carregamento.',
-      life: 5000
+      life: 4000
     });
   }
 
