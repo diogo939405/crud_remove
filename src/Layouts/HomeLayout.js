@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import '../menu/menu'
 import './HomeLayout.css'
 import '../service/link.service'
+import fotoFundo from '../imagens/Banner.png'
 import  {ToggleP} from  '../service/menuMobile'
 import { Cartilhas, Manuais, Adicionar, Lgpd, Anirvesariantes, Controle, Principal } from '../service/link.service'
 <link href="https://fonts.cdnfonts.com/css/ropa-sans-2" rel="stylesheet"></link>

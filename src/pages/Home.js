@@ -6,6 +6,7 @@ import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
+import fotoFundo from '../imagens/Banner.png'
 
 // import l from '../service/menuMobile'
 import axios from "axios"
