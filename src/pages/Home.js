@@ -59,7 +59,7 @@ export default function Home() {
     }
 
 
-    // toast.current.show({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
+    // toast.current.ssshow({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
   }
 
   const reject = () => {
